@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charlotte Tilbury</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <header class="header">
         <div class="menu">
-            <img src="../images/logo.png" alt="Logo">
+            <img id="logo" src="../images/logo.png" alt="Logo">
             <nav>
                 <ul class="list">
                     <li class="list__item">SHOP</li>
@@ -29,32 +33,33 @@
     </header>
 
     <figure class="banner">
-        <img src="../images/main_photoshoot.jpg" alt="Pillow Talk Photoshoot">
+        <img class="banner__image" src="../images/main_photoshoot.jpg" alt="Pillow Talk Photoshoot">
         <h1 class="banner__title">PILLOW TALK LOOK</h1>
         <h4 class="banner__subtitle">NEW COLLECTION</h4>
     </figure>
 
     <section class="shop">
         <h2 class="title">Best Sellers</h2>
-        <div class="shop__item">
-            <img class="shop__img" src="../images/serum_kit.jpg" alt="Serum Kit">
-            <h3 class="shop__product">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
-            <h5 class="shop__price">$154</h5>
-            <button class="shop__add">ADD TO CART</button>
+        <div class="shop__list">
+            <div class="shop__item">
+                <img class="shop__img" src="../images/serum_kit.jpg" alt="Serum Kit">
+                <h3 class="shop__product">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
+                <h5 class="shop__price">$154</h5>
+                <button class="shop__add">ADD TO CART</button>
+            </div>
+            <div class="shop__item">
+                <img class="shop__img" src="../images/face_kit.jpg" alt="Face Kit">
+                <h3 class="shop__product">THE FAMOUS AIRBRUSH FLAWLESS ROUTINE FACE KIT</h3>
+                <h5 class="shop__price">$118</h5>
+                <button class="shop__add">ADD TO CART</button>
+            </div>
+            <div class="shop__item">
+                <img class="shop__img" src="../images/pillowtalk_kit.jpg" alt="Serum Kit">
+                <h3 class="shop__product">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
+                <h5 class="shop__price">$154</h5>
+                <button class="shop__add">ADD TO CART</button>
+            </div>   
         </div>
-        <div class="shop__item">
-            <img class="shop__img" src="../images/face_kit.jpg" alt="Face Kit">
-            <h3 class="shop__product">THE FAMOUS AIRBRUSH FLAWLESS ROUTINE FACE KIT</h3>
-            <h5 class="shop__price">$118</h5>
-            <button class="shop__add">ADD TO CART</button>
-        </div>
-        <div class="shop__item">
-            <img class="shop__img" src="../images/pillowtalk_kit.jpg" alt="Serum Kit">
-            <h3 class="shop__product">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
-            <h5 class="shop__price">$154</h5>
-            <button class="shop__add">ADD TO CART</button>
-        </div>
-        
     </section>
 
     <section class="shade">

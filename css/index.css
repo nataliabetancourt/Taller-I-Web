@@ -3,3 +3,113 @@
     padding: 0;
     margin: 0;
 }
+
+.header {
+    background-image: linear-gradient(#340C0C, #5C302F);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    /*position: fixed;*/
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+}
+
+.list__item {
+    margin-left: 40px;
+    color: #FFF3EC;
+    font-family: 'Outfit', sans-serif;
+    font-weight: lighter;
+}
+
+#logo {
+    width: fit-content;
+    height: 25px;
+}
+
+/*Preguntar sobre las distancias entre los elementos (margenes en px)*/
+.icons__item {
+    width: fit-content;
+    height: 25px;
+    margin: 0 0 0 30px;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+}
+
+/*Calidad de la imagen*/
+.banner__image {
+    width: 100%;
+}
+
+.banner__title {
+    position: absolute;
+    font-family: 'Marcellus', serif;
+    font-size: 4em;
+    color: white;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*How to keep title and subtitle separated*/
+.banner__subtitle {
+    position: absolute;
+    font-family: 'Outfit', sans-serif;
+    font-weight: lighter;
+    font-size: 1.25em;
+    color: white;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 0.5em;
+}
+
+.title {
+    font-family: 'Marcellus', serif;
+    font-size: 2em;
+    margin: 3% 0 0 3%;
+    color: #340C0C;
+}
+
+.shop__list {
+    display: flex;
+    margin-left: 5%;
+}
+
+.shop__item {
+    width: 30%;
+    padding: 2%;
+}
+
+.shop__img {
+    padding: 5%;
+    width: 85%;
+}
+
+.shop__product {
+    font-family: 'Marcellus', serif;
+    font-size: 1.2em;
+    color: #340C0C;
+}
+
+.shop__price {
+    font-family: 'Outfit', sans-serif;
+    font-weight: lighter;
+    font-size: 1.125em;
+    color: #340C0C;
+    margin: 1% 0 6% 0;
+}
+
+/*Como poner un bloque solido de color*/
