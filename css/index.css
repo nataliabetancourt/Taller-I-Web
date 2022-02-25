@@ -4,31 +4,44 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.sans {
+    font-family: 'Outfit', sans-serif;
+    font-weight: lighter;
+}
+
+.serif {
+    font-family: 'Marcellus', serif;
+}
+
 .header {
     background-image: linear-gradient(#340C0C, #5C302F);
-    display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 20px;
-    /*position: fixed;*/
+    position: fixed;
+    z-index: 1;
     width: 100%;
 }
 
 .menu {
-    display: flex;
     justify-content: space-between;
 }
 
 .list {
-    display: flex;
     list-style: none;
 }
 
 .list__item {
     margin-left: 40px;
     color: #FFF3EC;
-    font-family: 'Outfit', sans-serif;
-    font-weight: lighter;
 }
 
 #logo {
@@ -36,26 +49,28 @@
     height: 25px;
 }
 
-/*Preguntar sobre las distancias entre los elementos (margenes en px)*/
 .icons__item {
     width: fit-content;
     height: 25px;
-    margin: 0 0 0 30px;
+    margin-right: 30px;
+    object-fit: cover;
 }
 
 .banner {
     position: relative;
     text-align: center;
+    width: 100%;
+    height: 800px;
 }
 
-/*Calidad de la imagen*/
 .banner__image {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /*magic */
 }
 
 .banner__title {
     position: absolute;
-    font-family: 'Marcellus', serif;
     font-size: 4em;
     color: white;
     top: 80%;
@@ -63,11 +78,8 @@
     transform: translate(-50%, -50%);
 }
 
-/*How to keep title and subtitle separated*/
 .banner__subtitle {
     position: absolute;
-    font-family: 'Outfit', sans-serif;
-    font-weight: lighter;
     font-size: 1.25em;
     color: white;
     top: 87%;
@@ -77,39 +89,158 @@
 }
 
 .title {
-    font-family: 'Marcellus', serif;
     font-size: 2em;
-    margin: 3% 0 0 3%;
+    margin-top: 60px;
     color: #340C0C;
 }
 
+.shop {
+    padding: 0 50px;
+    position: relative;
+}
+
 .shop__list {
-    display: flex;
-    margin-left: 5%;
+    z-index: 5;
 }
 
 .shop__item {
     width: 30%;
-    padding: 2%;
+    padding: 40px;
+    align-content: center;
 }
 
 .shop__img {
-    padding: 5%;
-    width: 85%;
+    padding: 20px;
+    width: 100%;
+    align-items: center;
 }
 
 .shop__product {
-    font-family: 'Marcellus', serif;
     font-size: 1.2em;
     color: #340C0C;
 }
 
 .shop__price {
-    font-family: 'Outfit', sans-serif;
-    font-weight: lighter;
     font-size: 1.125em;
     color: #340C0C;
     margin: 1% 0 6% 0;
+} 
+
+.shop__add {
+    background-color: transparent;
+    border: 1px solid #340C0C;
+    font-weight: normal;
+    width: 100%;
+    height: 50px;
 }
 
-/*Como poner un bloque solido de color*/
+.block {
+    position: absolute;
+    width: 100%;
+    height: 540px;
+    background-color: #FFF3EC;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.shade {
+    position: relative;
+    padding: 10px 50px 100px 50px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.shade__column {
+    position: relative;
+} 
+
+.shade__column--first {
+    width: 60%;
+}
+
+.title--foundation {
+    margin-top: 130px;
+}
+
+.shade__info {
+    width: 72%;
+    margin-top: 20px;
+    font-weight: normal;
+    color: #340C0C;
+}
+
+/*Not moving down with margin*/
+.shade__match {
+    border: 2px solid #340C0C;
+    padding: 10px 40px;
+    color: #340C0C;
+    font-weight: normal;
+    margin-top: 30px;
+}
+
+.shade__buy {
+    padding: 10px 40px;
+    background-color: #5C302F;
+    border: 2px solid #5C302F;
+    margin-left: 40px;
+    color: #EEC9AF;
+    margin-top: 30px;
+}
+
+.shade__slider {
+    padding: 30px;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.shade__column--second {
+    position: relative;
+    width: 40%;
+    z-index: 2;
+}
+
+.shade__foundation {
+    position: absolute;
+    height: 255px;
+    top: 70px;
+    left: -100px;
+}
+
+.shade__model {
+    height: 620px;
+    margin: 120px 0 0 150px;
+}
+
+.background__left {
+    position: absolute;
+    width: 25%;
+    left: 0px;
+    object-fit: cover;
+    bottom: -240px;
+}
+
+.background__right {
+    position: absolute;
+    right: 0;
+    top: -120px;
+    width: 13%;
+}
+
+.background__bottom {
+    position: absolute;
+    right: 0;
+    bottom: -210px;
+    width: 25%;
+}
+
+.newsletter {
+    position: relative;
+    background-color: #FFF3EC;
+    padding: 50px;
+}
+
+.newsletter__column {
+    align-content: center;
+    text-align: center;
+}

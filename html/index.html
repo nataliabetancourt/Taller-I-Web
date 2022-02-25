@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <header class="header">
-        <div class="menu">
+    <header class="header flex">
+        <div class="menu flex">
             <img id="logo" src="../images/logo.png" alt="Logo">
             <nav>
-                <ul class="list">
-                    <li class="list__item">SHOP</li>
-                    <li class="list__item">GIFTS</li>
-                    <li class="list__item">SERVICES</li>
-                    <li class="list__item">COMING SOON</li>
+                <ul class="list flex">
+                    <li class="list__item sans">SHOP</li>
+                    <li class="list__item sans">GIFTS</li>
+                    <li class="list__item sans">SERVICES</li>
+                    <li class="list__item sans">COMING SOON</li>
                 </ul>
             </nav>
         </div>
@@ -34,46 +34,49 @@
 
     <figure class="banner">
         <img class="banner__image" src="../images/main_photoshoot.jpg" alt="Pillow Talk Photoshoot">
-        <h1 class="banner__title">PILLOW TALK LOOK</h1>
-        <h4 class="banner__subtitle">NEW COLLECTION</h4>
+        <h1 class="banner__title serif">PILLOW TALK LOOK</h1>
+        <h4 class="banner__subtitle sans">NEW COLLECTION</h4>
     </figure>
 
     <section class="shop">
-        <h2 class="title">Best Sellers</h2>
-        <div class="shop__list">
+        <h2 class="title serif">Best Sellers</h2>
+        <div class="shop__list flex">
             <div class="shop__item">
                 <img class="shop__img" src="../images/serum_kit.jpg" alt="Serum Kit">
-                <h3 class="shop__product">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
-                <h5 class="shop__price">$154</h5>
-                <button class="shop__add">ADD TO CART</button>
+                <h3 class="shop__product serif">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
+                <h5 class="shop__price sans">$154</h5>
+                <button class="shop__add sans">ADD TO CART</button>
             </div>
             <div class="shop__item">
                 <img class="shop__img" src="../images/face_kit.jpg" alt="Face Kit">
-                <h3 class="shop__product">THE FAMOUS AIRBRUSH FLAWLESS ROUTINE FACE KIT</h3>
-                <h5 class="shop__price">$118</h5>
-                <button class="shop__add">ADD TO CART</button>
+                <h3 class="shop__product serif">THE FAMOUS AIRBRUSH FLAWLESS ROUTINE FACE KIT</h3>
+                <h5 class="shop__price sans">$118</h5>
+                <button class="shop__add sans">ADD TO CART</button>
             </div>
             <div class="shop__item">
                 <img class="shop__img" src="../images/pillowtalk_kit.jpg" alt="Serum Kit">
-                <h3 class="shop__product">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
-                <h5 class="shop__price">$154</h5>
-                <button class="shop__add">ADD TO CART</button>
+                <h3 class="shop__product serif">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
+                <h5 class="shop__price sans">$154</h5>
+                <button class="shop__add sans">ADD TO CART</button>
             </div>   
         </div>
+        <div class="block"></div>
     </section>
 
-    <section class="shade">
-        <h2 class="title">Foundation Shade Finder</h2>
-        <p class="shade__info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, quae ipsum explicabo, unde aperiam consectetur omnis quaerat esse repellendus accusantium quod sit quasi magnam alias inventore, atque suscipit sapiente ut.</p>
-        <div class="slider">
+    <section class="shade flex">
+        <div class="shade__column shade__column--first">
+            <h2 class="title serif title--foundation">Foundation <br>Shade Finder</h2>
+            <p class="shade__info sans">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, quae ipsum explicabo, unde aperiam consectetur omnis quaerat esse repellendus accusantium quod sit quasi magnam alias inventore, atque suscipit sapiente ut.</p>
             <form action="">
-                <input class="slider__slider" type="range" name="" id="">
-                <img class="slider__foundation" src="../images/bottles.jpg" alt="Foundation">
-                <img class="slider__model" src="../images/model.jpg" alt="Model">
+                <input class="shade__slider" type="range" name="" id="">
             </form>
+            <a class="shade__match sans" href="#">MATCH ME</a>
+            <a class="shade__buy sans" href="#">BUY SHADE</a>
         </div>
-        <button class="shade__match">MATCH ME</button>
-        <button class="shade__buy">BUY SHADE</button>
+        <div class="shade__column shade__column--second">
+            <img class="shade__foundation" src="../images/bottles.jpg" alt="Foundation">
+            <img class="shade__model" src="../images/model.jpg" alt="Model">
+        </div>
         <div class="background">
             <img class="background__left" src="../images/shades.png" alt="Foundation drops">
             <img class="background__right" src="../images/foundation.png" alt="Foundation drop">
@@ -82,32 +85,34 @@
     </section>
 
     <section class="newsletter">
-        <h2 class="title--newsletter">Join our newsletter</h2>
-        <h3 class="newsletter__discount">ENJOY 10% OFF</h3>
-        <p class="newsletter__info">Sign up to receive emails from Charlotte Tilbury Beauty about products, offers and tips to enjoy 10% off your next order! Restrictions apply.</p>
-        <form action="">
-            <input type="text" name="" id="">
-            <input type="submit" name="" id="" value="SIGN UP">
-        </form>
-        <p class="newsletter__terms">By providing my email address I agree to receiving emails from Charlotte Tilbury Beauty Limited. I understand that I can withdraw my consent at any time. View Privacy Policy for more.</p>
+        <div class="newsletter__column">
+            <h2 class="title--newsletter">Join our newsletter</h2>
+            <h3 class="newsletter__discount">ENJOY 10% OFF</h3>
+            <p class="newsletter__info">Sign up to receive emails from Charlotte Tilbury Beauty about products, offers and tips to enjoy 10% off your next order! Restrictions apply.</p>
+            <form action="">
+                <input type="text" name="" id="">
+                <input type="submit" name="" id="" value="SIGN UP">
+            </form>
+            <p class="newsletter__terms">By providing my email address I agree to receiving emails from Charlotte Tilbury Beauty Limited. I understand that I can withdraw my consent at any time. View Privacy Policy for more.</p>
+        </div>
     </section>
  
     <footer class="footer">
         <nav>
             <ul>
                 <div class="first">
-                    <li><a href="">STORE LOCATOR</a></li>
-                    <li><a href="">PRO ARTIST PROGRAM</a></li>
-                    <li><a href="">AFFILIATE PROGRAM</a></li>
+                    <li><a href="#">STORE LOCATOR</a></li>
+                    <li><a href="#">PRO ARTIST PROGRAM</a></li>
+                    <li><a href="#">AFFILIATE PROGRAM</a></li>
                 </div>
                 <div class="second">
-                    <li><a href="">CUSTOMER CARE</a></li>
-                    <li><a href="">SHIPPING</a></li>
-                    <li><a href="">RETURNS</a></li>
-                    <li><a href="">FAQ</a></li>
-                    <li><a href="">CAREERS</a></li>
-                    <li><a href="">ABOUT CHARLOTTE</a></li>
-                    <li><a href="">ORDER ONLINE</a></li>
+                    <li><a href="#">CUSTOMER CARE</a></li>
+                    <li><a href="#">SHIPPING</a></li>
+                    <li><a href="#">RETURNS</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">CAREERS</a></li>
+                    <li><a href="#">ABOUT CHARLOTTE</a></li>
+                    <li><a href="#">ORDER ONLINE</a></li>
                 </div>
             </ul>
         </nav>
@@ -123,14 +128,14 @@
             <p class="terms__paragraph">2013-2022 © Islestarr Holdings Ltd. All rights reserved.</p>
             <nav>
                 <ul>
-                    <li><a href="">Privacy Policy</a></li>
-                    <li><a href="">Cookies Policy</a></li>
-                    <li><a href="">Terms & Conditions</a></li>
-                    <li><a href="">Corporate Policies</a></li>
-                    <li><a href="">Manage Cookies</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookies Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Corporate Policies</a></li>
+                    <li><a href="#">Manage Cookies</a></li>
                 </ul>
             </nav>
-            <p>This site is protected by reCAPTCHA and the <a href="">Google Privacy Policy</a> and <a href="">Google Terms of Service</a> appy.</p>
+            <p>This site is protected by reCAPTCHA and the <a href="#">Google Privacy Policy</a> and <a href="#">Google Terms of Service</a> appy.</p>
         </div>
     </footer>
 </body>
