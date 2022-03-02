@@ -6,6 +6,11 @@
 
 a {
     text-decoration: none;
+    color: #FFF3EC;
+}
+
+ul {
+    list-style: none;
 }
 
 .flex {
@@ -15,10 +20,12 @@ a {
 .sans {
     font-family: 'Outfit', sans-serif;
     font-weight: lighter;
+    color: #340C0C;
 }
 
 .serif {
     font-family: 'Marcellus', serif;
+    color: #340C0C;
 }
 
 .header {
@@ -91,7 +98,6 @@ a {
 .title {
     font-size: 2em;
     margin-top: 60px;
-    color: #340C0C;
 }
 
 .shop {
@@ -117,12 +123,10 @@ a {
 
 .shop__product {
     font-size: 1.2em;
-    color: #340C0C;
 }
 
 .shop__price {
     font-size: 1.125em;
-    color: #340C0C;
     margin: 1% 0 6% 0;
 } 
 
@@ -164,10 +168,9 @@ a {
 }
 
 .shade__info {
-    width: 72%;
+    width: 60%;
     margin-top: 20px;
     font-weight: normal;
-    color: #340C0C;
 }
 
 /*Not moving down with margin*/
@@ -202,9 +205,9 @@ a {
 
 .shade__foundation {
     position: absolute;
-    height: 255px;
+    height: 300px;
     top: 70px;
-    left: -100px;
+    left: -130px;
 }
 
 .shade__model {
@@ -238,9 +241,103 @@ a {
     position: relative;
     background-color: #FFF3EC;
     padding: 50px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
 }
 
 .newsletter__column {
     align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.title--newsletter {
+    position: absolute;
+    top: -21%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.newsletter__discount {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.newsletter__info {
+    width: 30%;
+    font-weight: normal;
+    margin: 20px auto;
+}
+
+.newsletter__input {
+    width: 20%;
+    padding: 8px;
+    border: none;
+}
+
+.newsletter__sumbit {
+    width: 4%;
+    padding: 8px;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    color: #EEC9AF;
+    background-color: #340C0C;
+}
+
+.newsletter__terms {
+    font-size: 0.9em;
+    width: 40%;
+    margin: 20px auto;
+}
+
+.footer {
+    background-color: #340C0C;
+    padding: 50px 0;
+    justify-content: center;
+}
+
+.footer__columnn {
+    justify-content: center;
+}
+
+.footer__items {
+    color: #FFF3EC;
+    margin: 10px 15px;
+}
+
+.payment {
+    width: 40%;
+    justify-content: center;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+.payment__img {
+    width: 15%;
+    margin: 0 10px;
+}
+
+.footer__terms {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.footer__signature {
+    width: 80px;
+    margin: 0 auto;
+    display: block;
+}
+
+.terms__paragraph {
+    color: #FFF3EC;
+}
+
+.terms__items {
+    color: #FFF3EC;
+    margin: 0 5px;
+}
+
+.terms * {
     text-align: center;
 }
