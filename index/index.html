@@ -14,7 +14,7 @@
 <body>
     <header class="header flex">
         <div class="menu flex">
-            <img id="logo" src="../images/logo.png" alt="Logo">
+            <a href="#"><img id="logo" src="../images/logo.png" alt="Logo"></a>
             <nav>
                 <ul class="list flex">
                     <li class="list__item sans">SHOP</li>
@@ -67,15 +67,15 @@
         <div class="shade__column shade__column--first">
             <h2 class="title serif title--foundation">Foundation <br>Shade Finder</h2>
             <p class="shade__info sans">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, quae ipsum explicabo, unde aperiam consectetur omnis quaerat esse repellendus accusantium quod sit quasi magnam alias inventore, atque suscipit sapiente ut.</p>
-            <form action="">
-                <input class="shade__slider" type="range" name="" id="">
+            <form action="" class="shade__container">
+                <input class="shade__slider" type="range" name="" id="shadeSlider">
             </form>
             <a class="shade__match sans" href="#">MATCH ME</a>
             <a class="shade__buy sans" href="#">BUY SHADE</a>
         </div>
         <div class="shade__column shade__column--second">
-            <img class="shade__foundation" src="../images/bottles.jpg" alt="Foundation">
-            <img class="shade__model" src="../images/model.jpg" alt="Model">
+            <img class="shade__foundation" src="../images/bottles.jpg" alt="Foundation" id="foundation">
+            <img class="shade__model" src="../images/model.jpg" alt="Model" id="model">
         </div>
         <div class="background">
             <img class="background__left" src="../images/shades.png" alt="Foundation drops">
@@ -141,4 +141,5 @@
         </div>
     </footer>
 </body>
+<script src="index.js"></script>
 </html>

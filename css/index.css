@@ -34,7 +34,7 @@ ul {
     justify-content: space-between;
     padding: 20px 20px;
     position: fixed;
-    z-index: 1;
+    z-index: 5;
     width: 100%;
 }
 
@@ -191,10 +191,29 @@ ul {
     margin-top: 30px;
 }
 
+.shade__container {
+    padding: 15px 0;
+    margin: 20px 0 30px 0;
+}
+
 .shade__slider {
-    padding: 30px;
-    width: 80%;
-    margin-top: 30px;
+    appearance: none;
+    width: 70%;
+    height: 18px;
+    background: rgb(250,207,177);
+    background: linear-gradient(90deg, rgba(250,207,177,1) 0%, rgba(245,203,158,1) 12%, rgba(237,173,113,1) 26%, rgba(214,145,94,1) 40%, rgba(199,126,51,1) 54%, rgba(175,105,50,1) 70%, rgba(115,62,31,1) 85%, rgba(0,0,0,1) 100%);
+    border-radius: 10px;
+}
+
+.shade__slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 100%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #5C302F;
 }
 
 .shade__column--second {
@@ -207,12 +226,17 @@ ul {
     position: absolute;
     height: 300px;
     top: 70px;
-    left: -130px;
+    left: -150px;
+    width: 40%;
+    object-fit: cover;
 }
 
 .shade__model {
-    height: 620px;
-    margin: 120px 0 0 150px;
+    height: 540px;
+    width: 75%;
+    margin: 90px 0 0 120px;
+    padding: 10px;
+    object-fit: cover;
 }
 
 .background__left {
@@ -241,7 +265,6 @@ ul {
     position: relative;
     background-color: #FFF3EC;
     padding: 50px;
-    height: 300px;
     align-items: center;
     justify-content: center;
 }
@@ -254,7 +277,7 @@ ul {
 
 .title--newsletter {
     position: absolute;
-    top: -21%;
+    top: -17%;
     left: 50%;
     transform: translate(-50%, -50%); 
 }
@@ -277,7 +300,6 @@ ul {
 }
 
 .newsletter__sumbit {
-    width: 4%;
     padding: 8px;
     border: none;
     font-family: 'Outfit', sans-serif;
@@ -287,14 +309,18 @@ ul {
 
 .newsletter__terms {
     font-size: 0.9em;
-    width: 40%;
-    margin: 20px auto;
+    width: 50%;
+    margin: 30px auto;
 }
 
 .footer {
     background-color: #340C0C;
     padding: 50px 0;
     justify-content: center;
+}
+
+.footer a {
+    text-decoration: underline;
 }
 
 .footer__columnn {
@@ -321,16 +347,19 @@ ul {
 .footer__terms {
     margin: 0 auto;
     width: fit-content;
+    text-align: center;
 }
 
 .footer__signature {
-    width: 80px;
+    width: 160px;
     margin: 0 auto;
     display: block;
+    margin-bottom: 30px;
 }
 
 .terms__paragraph {
     color: #FFF3EC;
+    margin: 10px auto   ;
 }
 
 .terms__items {
