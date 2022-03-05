@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/mediaqueries.css">
 </head>
 <body>
     <header class="header flex">
@@ -29,6 +30,7 @@
             <img  class="icons__item" src="../images/heart.png" alt="Like">
             <img  class="icons__item" src="../images/search.png" alt="Search">
             <img  class="icons__item" src="../images/bag.png" alt="Shop">
+            <img src="../images/menu.png" alt="Menu" class="icons__item icons__item--menu">
         </div>
     </header>
 
@@ -54,27 +56,33 @@
 
     <section class="shop">
         <h2 class="title serif">Best Sellers</h2>
-        <div class="shop__list flex">
+        <div class="shop__list">
             <div class="shop__item">
                 <img class="shop__img" src="../images/serum_kit.jpg" alt="Serum Kit">
-                <h3 class="shop__product serif">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
-                <h5 class="shop__price sans">$154</h5>
-                <button class="shop__add sans">ADD TO CART</button>
+                <div class="shop__info">
+                    <h3 class="shop__product serif">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
+                    <h5 class="shop__price sans">$154</h5>
+                    <button class="shop__add sans">ADD TO CART</button>
+                </div>
             </div>
             <div class="shop__item">
                 <img class="shop__img" src="../images/face_kit.jpg" alt="Face Kit">
-                <h3 class="shop__product serif">THE FAMOUS AIRBRUSH FLAWLESS ROUTINE FACE KIT</h3>
-                <h5 class="shop__price sans">$118</h5>
-                <button class="shop__add sans">ADD TO CART</button>
+                <div class="shop__info">
+                    <h3 class="shop__product serif">THE FAMOUS AIRBRUSH FLAWLESS ROUTINE FACE KIT</h3>
+                    <h5 class="shop__price sans">$118</h5>
+                    <button class="shop__add sans">ADD TO CART</button>   
+                </div>
             </div>
             <div class="shop__item">
                 <img class="shop__img" src="../images/pillowtalk_kit.jpg" alt="Serum Kit">
-                <h3 class="shop__product serif">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
-                <h5 class="shop__price sans">$154</h5>
-                <button class="shop__add sans">ADD TO CART</button>
+                <div class="shop__info">
+                    <h3 class="shop__product serif">SCIENCE-POWERED MAGIC CREAM LIGHT & SERUM KIT</h3>
+                    <h5 class="shop__price sans">$154</h5>
+                    <button class="shop__add sans">ADD TO CART</button>   
+                </div>
             </div>   
         </div>
-        <div class="block"></div>
+        <div class="shop__block"></div>
     </section>
 
     <section class="shade flex">
