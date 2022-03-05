@@ -67,7 +67,28 @@ ul {
     position: relative;
     text-align: center;
     width: 100%;
-    height: 800px;
+    height: 700px;
+    overflow: hidden;
+}
+
+.banner ul {
+    animation: slideshow 20s infinite alternate linear;
+    width: 400%;
+}
+
+.banner li {
+    width: 100%;
+}
+
+@keyframes slideshow {
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+    50%{margin-left: -200%;}
+    70%{margin-left : -200%;}
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
 }
 
 .banner__image {
@@ -83,6 +104,8 @@ ul {
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-shadow: 1px 1px 15px rgba(29, 29, 29, 0.63);
+    z-index: 5;
 }
 
 .banner__subtitle {
@@ -93,6 +116,17 @@ ul {
     left: 50%;
     transform: translate(-50%, -50%);
     letter-spacing: 0.5em;
+    text-shadow: 1px 1px 15px rgba(29, 29, 29, 0.63);
+    z-index: 5;
+}
+
+.banner__shadow {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background: rgb(52,12,12);
+    background: linear-gradient(0deg, rgba(52,12,12,1) 0%, rgba(52,12,12,0) 100%);
+    bottom: 0;
 }
 
 .title {
@@ -138,6 +172,12 @@ ul {
     height: 50px;
 }
 
+.shop__add:hover {
+    background-color: #5C302F;
+    color: #EEC9AF;
+    font-weight: normal;
+}
+
 .block {
     position: absolute;
     width: 100%;
@@ -173,13 +213,19 @@ ul {
     font-weight: normal;
 }
 
-/*Not moving down with margin*/
 .shade__match {
     border: 2px solid #340C0C;
     padding: 10px 40px;
     color: #340C0C;
-    font-weight: normal;
+    font-weight: lighter;
     margin-top: 30px;
+}
+
+.shade__match:hover {
+    background-color: #340C0C;
+    color: #EEC9AF;
+    font-weight: normal;
+    border: 2px solid #340C0C;
 }
 
 .shade__buy {
@@ -189,6 +235,13 @@ ul {
     margin-left: 40px;
     color: #EEC9AF;
     margin-top: 30px;
+    font-weight: lighter;
+}
+
+.shade__buy:hover {
+    border: 2px solid #340C0C;
+    background-color: #340C0C;
+    font-weight: normal;
 }
 
 .shade__container {
