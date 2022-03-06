@@ -1,5 +1,5 @@
+/*Tablet*/
 @media all and (max-width: 1180px) {
-
     /*Header section*/
     .list {
         display: none;
@@ -16,7 +16,7 @@
     }
 
     .banner__title {
-        font-size: 2.7em;
+        font-size: 2.4em;
     }
 
     .banner__subtitle {
@@ -121,5 +121,23 @@
     /*Footer section*/
     .payment {
         width: 70%;
+    }
+}
+
+/*Cellphone*/
+@media all and (max-width: 400px) {
+    /*Header section*/
+    .icons__item {
+        display: none;
+    }
+
+    .icons__item--menu {
+        display: block;
+    }
+
+    /*Banner section*/
+    /*Preguntar porque no ocupa toda la pantalla*/
+    .banner {
+        width: 100%;
     }
 }
