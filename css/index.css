@@ -119,6 +119,8 @@ ul {
     padding: 20px;
     width: 100%;
     align-items: center;
+    object-fit: cover;
+    background-color: white;
 }
 
 .shop__product {
@@ -324,13 +326,14 @@ ul {
 }
 
 .footer__signature {
-    width: 80px;
+    width: 250px;
     margin: 0 auto;
     display: block;
 }
 
 .terms__paragraph {
     color: #FFF3EC;
+    margin: 20px 0;
 }
 
 .terms__items {
