@@ -71,7 +71,7 @@ ul {
     position: relative;
     text-align: center;
     width: 100%;
-    height: 710px;
+    height: 800px;
     overflow: hidden;
 }
 
@@ -158,6 +158,7 @@ ul {
 .shop__img {
     padding: 20px;
     width: 100%;
+    height: 513px;
     align-items: center;
     object-fit: cover;
     background-color: white;
@@ -165,11 +166,12 @@ ul {
 
 .shop__product {
     font-size: 1.2em;
+    padding: 10px;
 }
 
 .shop__price {
     font-size: 1.125em;
-    margin: 1% 0 6% 0;
+    margin: 1% 0 6% 10px;
 } 
 
 .shop__add {
@@ -289,7 +291,7 @@ ul {
     height: 300px;
     top: 70px;
     left: -150px;
-    width: 40%;
+    width: 30%;
     object-fit: cover;
 }
 
