@@ -150,7 +150,7 @@ ul {
 }
 
 .shop__item {
-    width: 30%;
+    width: 34%;
     padding: 40px;
     align-content: center;
 }
@@ -160,7 +160,7 @@ ul {
     width: 100%;
     height: 513px;
     align-items: center;
-    object-fit: cover;
+    object-fit: contain;
     background-color: white;
 }
 

@@ -48,7 +48,6 @@
         object-fit: cover;
     }
 
-    /*Preguntar como bajar la info para que quede alineado con el final de la imagen*/
     .shop__info {
         align-items: flex-end;
         padding: 20px;
@@ -85,14 +84,14 @@
     }
 
     .shade__foundation {
-        width: 300px;
-        height: 350px;
+        width: 230px;
+        height: 330px;
         left: 20px;
     }
 
-    /*Preguntar como acomodar modelo hacia la izquierda*/
     .shade__model {
-        margin: 30px 0 0 90px;
+        width: 450px;
+        margin: 90px 270px 0;
     }
 
     .background__left {
@@ -147,6 +146,10 @@
     /*Banner section*/
     .banner {
         width: 100%;
+    }
+
+    .banner__img {
+        object-fit: cover;
     }
 
     .banner__title {
@@ -210,9 +213,8 @@
     }
 
     .shade__model {
-        margin-top: 140px;
+        margin: 140px 100px 50px;
         width: 280px;
-        margin-bottom: 50px;
     }
 
     .background__left {
@@ -268,5 +270,4 @@
     .payment {
         width: 100%;
     }
-
 }
