@@ -87,46 +87,34 @@ const shopSection = document.getElementById("shop");
 function filter() {
     //Filter products for prices over 50 or if they're available in stock
     console.log("The products that cost more than 50$ or that are in stock are: ");
-    for (let index = 0; index < products.length; index++) {
-        if (products[index].price > 50 || products[index].amount > 0) {
-            console.log(products[index].name);
+    products.forEach(product => {
+        if (product.price > 50 || product.amount > 0) {
+            console.log(product.name);
         }
-    }
+    });
 }
 
 //To render shop products
 function shopProducts(){
     //Leave div empty to fill
     shopSection.innerHTML = "";
-    for (let index = 0; index < products.length; index++) {
-        shopSection.appendChild(render(products[index]));
-    }
+    products.forEach(product => {
+        shopSection.appendChild(render(product));
+    });
 }
 
 //Create items
 function render(product){
          //Container
-         let item = document.createElement("div");
+         const item = document.createElement("div");
+         const inStock = product.amount > 0 ? "IN STOCK" : "NOT IN STOCK"
          item.className = "shop__item";
-
-         //Product image
-         let image = document.createElement("img");
-         image.className = "shop__img";
-         image.src = product.image;
- 
-         //Product name
-         let name = document.createElement("h3");
-         name.className = "shop__product serif";
-         name.innerHTML = product.name;
- 
-         //Product price
-         let price = document.createElement("h5");
-         price.className = "shop__price sans"
-         price.innerHTML = "$" + product.price;
- 
-         item.appendChild(image);
-         item.appendChild(name);
-         item.appendChild(price);
+         item.innerHTML = `
+            <img class="shop__img" src="${product.image}">
+            <h3 class="shop__product serif">${product.name}</h3>
+            <h5 class="shop__price sans">${"$" +product.price}</h5>
+            <p class="shop__price sans">${inStock}</p>
+         `;
 
          return item;
 }
