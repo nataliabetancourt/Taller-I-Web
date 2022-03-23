@@ -112,8 +112,9 @@ function render(product){
          item.innerHTML = `
             <img class="shop__img" src="${product.image}">
             <h3 class="shop__product serif">${product.name}</h3>
-            <h5 class="shop__price sans">${"$" +product.price}</h5>
-            <p class="shop__price sans">${inStock}</p>
+            <h5 class="sans">${"$" +product.price}</h5>
+            <p class="sans">${inStock}</p>
+            <p class="sans">${"Color: " + product.color}</p>
          `;
 
          return item;
