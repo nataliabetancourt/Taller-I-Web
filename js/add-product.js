@@ -1,10 +1,7 @@
 //Calling html elements
-const nameInput = document.getElementById("name");
-const priceInput = document.getElementById("price");
-const imgInput = document.getElementById("image");
-const stockInput = document.getElementById("stock");
-const colorInput = document.getElementById("color");
-const addBtn = document.getElementById("form");
+const form = document.getElementById("form");
+
+//Element to paint products
 const products = document.getElementById("products");
 
 //Product array
@@ -40,26 +37,26 @@ function render(product){
 addBtn.addEventListener('submit', e => {
     e.preventDefault();
 
-    if (nameInput.value === "" || priceInput.value == "" || imgInput.value === "" || stockInput.value == "" || colorInput.value === "") {
+    if (form.name.value === "" || form.price.value == "" || form.image.value === "" || form.stock.value == "" || form.color.value === "") {
         alert("Fill in the spaces");
     } else {
         const product = {
-            name: nameInput.value,
-            price: "" + priceInput.value,
-            image: imgInput.value, 
-            stock: stockInput.value,
-            color: colorInput.value
+            name: form.name.value,
+            price: "" + form.price.value,
+            image: form.image.value, 
+            stock: form.stock.value,
+            color: form.color.value
         }
         productsCreated.push(product);
         console.log(productsCreated);
         renderProducts();
 
         //Leave inputs empty
-        nameInput.value = "";
-        priceInput.value = "";
-        imgInput.value = "";
-        stockInput.value = "";
-        colorInput.value = "";
+        form.name.value = "";
+        form.price.value = "";
+        form.image.value = "";
+        form.stock.value = "";
+        form.color.value = "";
     }
 });
 
