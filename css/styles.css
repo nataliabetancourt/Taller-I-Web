@@ -343,7 +343,7 @@ ul {
 .shade__buy {
   padding: 10px 40px;
   background-color: #5C302F;
-  border: 2px solid secondaryColor;
+  border: 2px solid #5C302F;
   margin-left: 40px;
   color: #EEC9AF;
   margin-top: 30px;
