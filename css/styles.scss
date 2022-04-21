@@ -1,0 +1,465 @@
+$mainColor: #340C0C;
+$lightColor: #FFF3EC;
+$secondaryColor: #5C302F;
+$accentColor: #EEC9AF;
+$sansFont: 'Outfit', sans-serif;
+$serifFont: 'Marcellus', serif;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF3EC;
+}
+
+ul {
+    list-style: none;
+}
+
+@mixin sansStyle($theme: $mainColor) {
+    font-family: $sansFont;
+    font-weight: lighter;
+    color: $theme;
+}
+
+@mixin serifStyle($theme: $mainColor) {
+    font-family: $serifFont;
+    color: $theme;
+}
+
+@mixin hover () {
+    background-color: $secondaryColor;
+    color: $accentColor;
+    font-weight: normal;
+}
+
+.flex {
+    display: flex;
+}
+
+.header {
+    background-image: linear-gradient(#340C0C, #5C302F);
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+}
+
+.menu {
+    justify-content: space-between;
+}
+
+.list {
+    list-style: none;
+
+    &__item {
+        margin-left: 40px;
+        color: #FFF3EC;
+        @include sansStyle($theme: $lightColor);
+    }
+}
+
+#logo {
+    width: fit-content;
+    height: 25px;
+}
+
+.icons__item {
+    width: fit-content;
+    height: 25px;
+    margin-right: 30px;
+    object-fit: cover;
+
+    &--menu {
+        display: none;
+    }
+}
+
+@keyframes slideshow {
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+    50%{margin-left: -200%;}
+    70%{margin-left : -200%;}
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+
+    ul {
+        animation: slideshow 20s infinite alternate linear;
+        width: 400%;
+        height: 100%;
+    }
+
+    li {
+        width: 100%;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /*magic */
+    }
+
+    &__title {
+        position: absolute;
+        font-size: 4em;
+        color: white;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-shadow: 1px 1px 15px rgba(29, 29, 29, 0.63);
+        z-index: 5;
+        @include serifStyle($theme: $lightColor);
+    }
+
+    &__subtitle {
+        position: absolute;
+        font-size: 1.25em;
+        color: white;
+        top: 87%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        letter-spacing: 0.5em;
+        text-shadow: 1px 1px 15px rgba(29, 29, 29, 0.63);
+        z-index: 5;
+        @include sansStyle($theme: $lightColor);
+    }
+
+    &__shadow {
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        background: $mainColor;
+        background: linear-gradient(0deg, rgba(52,12,12,1) 0%, rgba(52,12,12,0) 100%);
+        bottom: 0;
+    }
+}
+
+.title {
+    font-size: 2em;
+    margin-top: 60px;
+    @include serifStyle();
+
+    &--foundation {
+        margin-top: 130px;
+    }
+
+    &--newsletter {
+        position: absolute;
+        top: -17%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }
+}
+
+.shop {
+    padding: 0 50px;
+    position: relative;
+
+    &__list {
+        display: flex;
+        z-index: 5;
+    }
+
+    &__item {
+        width: 34%;
+        padding: 40px;
+        align-content: center;
+    }
+
+    &__img {
+        padding: 20px;
+        width: 100%;
+        height: 513px;
+        align-items: center;
+        object-fit: contain;
+        background-color: white;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    &__product {
+        font-size: 1.2em;
+        padding: 10px;
+        @include serifStyle();
+    }
+
+    &__price {
+        font-size: 1.125em;
+        margin: 1% 0 6% 10px;
+        @include sansStyle();
+    } 
+
+    &__add {
+        background-color: transparent;
+        border: 1px solid $mainColor;
+        font-weight: normal;
+        width: 100%;
+        height: 50px;
+        @include sansStyle();
+
+        &:hover {
+            @include hover();
+        }
+    }
+
+    &__block {
+        position: absolute;
+        width: 100%;
+        height: 540px;
+        background-color: $lightColor;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+.shade {
+    display: flex;
+    position: relative;
+    padding: 10px 50px 100px 50px;
+    background-color: white;
+    overflow: hidden;
+
+    &__column {
+        position: relative;
+
+        &--first {
+            width: 60%;
+        }
+
+        &--second {
+            position: relative;
+            width: 40%;
+            z-index: 2;
+        }
+    } 
+
+    &__info {
+        width: 60%;
+        margin-top: 20px;
+        font-weight: normal;
+        @include sansStyle();
+    }
+
+    &__match {
+        border: 2px solid #340C0C;
+        padding: 10px 40px;
+        color: $mainColor;
+        font-weight: lighter;
+        margin-top: 30px;
+        @include sansStyle();
+
+        &:hover {
+            @include hover();
+            border: 2px solid #340C0C;
+        }
+    }
+
+    &__buy {
+        padding: 10px 40px;
+        background-color: $secondaryColor;
+        border: 2px solid secondaryColor;
+        margin-left: 40px;
+        color: $accentColor;
+        margin-top: 30px;
+        font-weight: lighter;
+        @include sansStyle($theme: secondaryColor);
+
+        &:hover {
+            border: 2px solid #340C0C;
+            background-color: #340C0C;
+            font-weight: normal;
+        }
+    }
+
+    &__container {
+        padding: 15px 0;
+        margin: 20px 0 30px 0;
+    }
+
+    &__slider {
+        appearance: none;
+        width: 70%;
+        height: 18px;
+        background: $accentColor;
+        background: linear-gradient(90deg, rgba(250,207,177,1) 0%, rgba(245,203,158,1) 12%, rgba(237,173,113,1) 26%, rgba(214,145,94,1) 40%, rgba(199,126,51,1) 54%, rgba(175,105,50,1) 70%, rgba(115,62,31,1) 85%, rgba(0,0,0,1) 100%);
+        border-radius: 10px;
+
+        &::-webkit-slider-thumb {
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 100%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px $secondaryColor;
+        }
+    }
+
+    &__foundation {
+        position: absolute;
+        height: 300px;
+        top: 70px;
+        left: -150px;
+        width: 35%;
+        object-fit: cover;
+    }
+
+    &__model {
+        height: 540px;
+        width: 75%;
+        margin: 90px 0 0 120px;
+        padding: 10px;
+        object-fit: cover;
+    }
+}
+
+.background {
+
+    &__left {
+        position: absolute;
+        width: 25%;
+        left: 0px;
+        object-fit: cover;
+        bottom: -240px;
+    }
+
+    &__right {
+        position: absolute;
+        right: 0;
+        top: -120px;
+        width: 13%;
+    }
+
+    &__bottom {
+        position: absolute;
+        right: 0;
+        bottom: -210px;
+        width: 25%;
+    }
+}
+
+.newsletter {
+    position: relative;
+    background-color: $lightColor;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+
+    &__column {
+        align-content: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    &__discount {
+        font-weight: bold;
+        font-size: 1.5em;
+        @include sansStyle();
+    }
+
+    &__info {
+        width: 30%;
+        font-weight: normal;
+        margin: 20px auto;
+        @include sansStyle();
+    }
+
+    &__input {
+        width: 20%;
+        padding: 8px;
+        border: none;
+    }
+
+    &__sumbit {
+        padding: 8px;
+        border: none;
+        @include sansStyle($theme: $accentColor);
+        background-color: $mainColor;
+    }
+
+    &__terms {
+        font-size: 0.9em;
+        width: 50%;
+        margin: 30px auto;
+        @include sansStyle();
+    }
+}
+
+.footer {
+    background-color: #340C0C;
+    padding: 50px 0;
+    justify-content: center;
+    @include sansStyle();
+
+    a {
+        text-decoration: underline;
+    }
+
+    &__columnn {
+        justify-content: center;
+    }
+
+    &__items {
+        color: $lightColor;
+        margin: 10px 15px;
+    }
+
+    &__terms {
+        margin: 0 auto;
+        width: fit-content;
+        text-align: center;
+    }
+
+    &__signature {
+        width: 160px;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 30px;
+    }
+}
+
+.payment {
+    width: 40%;
+    justify-content: center;
+    padding: 30px;
+    margin: 0 auto;
+
+    &__img {
+        width: 15%;
+        margin: 0 10px;
+    }
+}
+
+.terms {
+
+    * {
+        text-align: center;
+    }
+
+    &__paragraph {
+        color: $lightColor;
+        margin: 10px auto;
+    }
+
+    &__items {
+        color: $lightColor;
+        margin: 0 5px;
+    }
+}
