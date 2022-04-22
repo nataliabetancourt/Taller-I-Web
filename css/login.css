@@ -77,27 +77,27 @@ ul {
   display: none;
 }
 
-.login {
+.registration {
   position: relative;
   top: 150px;
   margin-left: 50px;
 }
 
-.login__title {
+.registration__title {
   font-family: "Marcellus", serif;
   color: #340C0C;
   font-size: 1.8em;
   margin-bottom: 40px;
 }
 
-.login__label {
+.registration__label {
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
   color: #340C0C;
   font-weight: normal;
 }
 
-.login__email {
+.registration__input {
   display: block;
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
@@ -111,29 +111,23 @@ ul {
   margin-bottom: 18px;
 }
 
-.login__password {
-  display: block;
-  font-family: "Outfit", sans-serif;
-  font-weight: lighter;
-  color: #340C0C;
-  font-size: 1em;
-  border: solid 2px #340C0C;
-  padding: 5px;
-  width: 35%;
-  height: 40px;
-  margin-top: 5px;
-}
-
-.login__signup {
+.registration__registration {
   display: block;
   text-decoration: underline;
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
   color: #5C302F;
-  margin-top: 50px;
+  font-size: 1em;
+  margin: 15px 0;
+  background-color: transparent;
+  border: none;
 }
 
-.login__submit {
+.registration__registration--hide {
+  display: none;
+}
+
+.registration__submit {
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
   color: #EEC9AF;
@@ -145,16 +139,39 @@ ul {
   font-weight: lighter;
 }
 
-.login__submit:hover {
+.registration__submit:hover {
   border: 2px solid #340C0C;
   background-color: #340C0C;
   font-weight: normal;
 }
 
-.login__background {
+.registration__background {
   position: absolute;
   top: -100px;
   right: 0px;
   width: 58%;
+}
+
+.registration__decor {
+  position: absolute;
+  top: -90px;
+  right: 56%;
+  height: 300px;
+}
+
+.signup {
+  display: none;
+}
+
+.signup--show {
+  display: block;
+}
+
+.login {
+  display: block;
+}
+
+.login--hide {
+  display: none;
 }
 /*# sourceMappingURL=login.css.map */

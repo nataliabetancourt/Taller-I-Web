@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlotte Tilbury Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <header class="header flex">
+        <div class="menu flex">
+            <a href="#"><img id="logo" src="../images/logo.png" alt="Logo"></a>
+            <nav>
+                <ul class="list flex">
+                    <li class="list__item sans">SHOP</li>
+                    <li class="list__item sans">GIFTS</li>
+                    <li class="list__item sans">SERVICES</li>
+                    <li class="list__item sans">COMING SOON</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="icons">
+            <img  class="icons__item" src="../images/profile_selected.png" alt="Profile">
+            <img  class="icons__item" src="../images/heart.png" alt="Like">
+            <img  class="icons__item" src="../images/search.png" alt="Search">
+            <img  class="icons__item" src="../images/bag.png" alt="Shop">
+            <img src="../images/menu.png" alt="Menu" class="icons__item icons__item--menu">
+        </div>
+    </header>
+
+    <section class="registration">
+        <h2 class="registration__title">Register</h2>
+
+        <!--Login inputs-->
+        <form action="" id="login" class="login">
+            <label for="email" class="registration__label">EMAIL</label>
+            <input type="email" name="email" placeholder="Email" id="email" class="registration__input">
+
+            <label for="password" class="registration__label">PASSWORD</label>
+            <input type="password" name="password" placeholder="Password" id="password" class="registration__input">
+
+            <input type="submit" value="LOGIN" class="registration__submit">
+        </form>
+
+         <!--Sign up inputs-->
+        <form action="" id="signup" class="signup">
+            <label for="name" class="registration__label">NAME</label>
+            <input type="text" name="name" placeholder="First name" id="name" class="registration__input">
+
+            <label for="lastname" class="registration__label">LAST NAME</label>
+            <input type="text" name="lastname" placeholder="Last name" id="lastname" class="registration__input">
+
+            <label for="email" class="registration__label">EMAIL</label>
+            <input type="email" name="lastname" placeholder="Email" id="email" class="registration__input">
+
+            <label for="cell" class="registration__label">CELLPHONE NUMBER</label>
+            <input type="text" name="cell" placeholder="Cellphone number" id="cell" class="registration__input">
+
+            <label for="password" class="registration__label">PASSWORD</label>
+            <input type="password" name="password" placeholder="Password" id="password" class="registration__input">
+
+            
+            <input type="submit" value="SIGN UP" class="registration__submit">
+        </form>
+
+        <button class="registration__registration" id="signupBtn">Don't have an account? Sign up here</button>
+        <button class="registration__registration registration__registration--hide" id="loginBtn">Already have an account? Login here</button>
+        <img src="../images/lipstick_stain.png" alt="Lipstick stain" class="registration__decor">
+        <img src="../images/login_background.jpg" alt="Login background" class="registration__background">
+    </section>
+
+    <script src="../js/login-signup.js" type="module"></script>
+</body>
+</html>

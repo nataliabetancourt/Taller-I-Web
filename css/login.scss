@@ -31,17 +31,6 @@ ul {
     color: $theme;
 }
 
-@mixin input() {
-    display: block;
-    @include sansStyle();
-    font-size: 1em;
-    border: solid 2px $mainColor;
-    padding: 5px;
-    width: 35%;
-    height: 40px;
-    margin-top: 5px;
-}
-
 .flex {
     display: flex;
 }
@@ -87,7 +76,7 @@ ul {
     }
 }
 
-.login {
+.registration {
     position: relative;
     top: 150px;
     margin-left: 50px;
@@ -103,20 +92,30 @@ ul {
         font-weight: normal;
     }
     
-    &__email {
-        @include input();
+    &__input {
+        display: block;
+        @include sansStyle();
+        font-size: 1em;
+        border: solid 2px $mainColor;
+        padding: 5px;
+        width: 35%;
+        height: 40px;
+        margin-top: 5px;
         margin-bottom: 18px;
     }
 
-    &__password {
-        @include input();
-    }
-
-    &__signup {
+    &__registration {
         display: block;
         text-decoration: underline;
         @include sansStyle($theme: $secondaryColor);
-        margin-top: 50px;
+        font-size: 1em;
+        margin: 15px 0;
+        background-color: transparent;
+        border: none;
+
+        &--hide {
+            display: none;
+        }
     }
 
     &__submit {
@@ -140,5 +139,28 @@ ul {
         top: -100px;
         right: 0px;
         width: 58%;
+    }
+
+    &__decor {
+        position: absolute;
+        top: -90px;
+        right: 56%;
+        height: 300px;
+    }
+}
+
+.signup {
+    display: none;
+
+    &--show {
+        display: block;
+    }
+}
+
+.login {
+    display: block;
+
+    &--hide {
+        display: none;
     }
 }
