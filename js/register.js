@@ -1,26 +1,5 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
+import { db, auth} from "./app";
 import { login, createUser, addUserToDatabase } from "./functions/auth";
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDceSUOyydDIZvwKKWO189W_HaCHaN1Utw",
-  authDomain: "web-charlotte-shop.firebaseapp.com",
-  projectId: "web-charlotte-shop",
-  storageBucket: "web-charlotte-shop.appspot.com",
-  messagingSenderId: "726419666073",
-  appId: "1:726419666073:web:f982b8c85cbfc136cf7408"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth();
-const db = getFirestore(app);
 
 //Call HTML elements
 //Login form
@@ -39,6 +18,9 @@ loginForm.addEventListener("submit", e => {
   const password = loginForm.password.value;
 
   login(auth, email, password);
+
+  //Send to home page
+  //window.location.href = "../html/index.html";
 });
 
 //Open sign up form
@@ -53,7 +35,7 @@ signupBtn.addEventListener("click", e =>{
 })
 
 //Submit button on sign up form
-signupForm.addEventListener("submit", e =>{
+signupForm.addEventListener("submit", async (e) =>{
   e.preventDefault();
 
   //Information from inputs
@@ -75,9 +57,13 @@ signupForm.addEventListener("submit", e =>{
   //Create user and add to authentication
   const newUser = await createUser(auth, userInfo);
   //Add additional user info to database
-  //await addUserToDatabase(db, newUser.uid, userInfo);
+  await addUserToDatabase(db, newUser.uid, userInfo);
   
   alert(`Welcome, ${name}`);
+
+  //Send to home page
+  //window.location.href = "../html/index.html";
+
 })
 
 //Open login form
