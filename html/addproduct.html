@@ -5,21 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/addProduct.css">
 </head>
 <body>
-    <h2 class="serif">Add product:</h2>
-    <form action="" id="form">
-        <input type="text" name="name" placeholder="Product name" required>
-        <input type="number" name="price" placeholder="Product price" required >
-        <input type="text" name="image" placeholder="Product image path" required>
-        <input type="number" name="stock" placeholder="Product stock" required>
-        <input type="text" name="color" placeholder="Product color" required>
-        <input type="submit" value="Add product" id="addBtn">
-    </form>
-    <div id="products"></div>
-    <script src="../js/add-product.js"></script>
+    <header class="header flex">
+        <div class="menu flex">
+            <a href="#"><img id="logo" src="../images/logo.png" alt="Logo"></a>
+            <nav>
+                <ul class="list flex">
+                    <li class="list__item sans">SHOP</li>
+                    <li class="list__item sans">GIFTS</li>
+                    <li class="list__item sans">SERVICES</li>
+                    <li class="list__item sans">COMING SOON</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="icons">
+            <img  class="icons__item" src="../images/profile.png" alt="Profile">
+            <img  class="icons__item" src="../images/heart.png" alt="Like">
+            <img  class="icons__item" src="../images/search.png" alt="Search">
+            <img  class="icons__item" src="../images/bag.png" alt="Shop">
+            <img src="../images/menu.png" alt="Menu" class="icons__item icons__item--menu">
+        </div>
+    </header>
+
+    <section class="products">
+        <h2 class="products__title">Add product</h2>
+        <form action="" id="productsForm">
+            <label for="name" class="products__label">NAME</label>
+            <input type="text" name="name" placeholder="Product name" class="products__input" id="name">
+
+            <label for="category" class="products__label">CATEGORY</label>
+            <select name="category" id="category" class="products__input">
+                <option hidden disabled selected value>Select an option... </option>
+                <option value="face">Face</option>
+                <option value="cheek">Cheek</option>
+                <option value="eyes">Eyes</option>
+                <option value="lips">Lips</option>
+            </select>
+
+            <label for="price" class="products__label products__label--price">PRICE</label>
+            <input type="number" name="price" placeholder="Product price" class="products__input" id="price">
+
+            <label for="description" class="products__label">DESCRIPTION</label>
+            <textarea name="description" class="products__input products__input--description" id="description" placeholder="Describe the product here..."></textarea>
+
+            <label for="stock" class="products__label">STOCK</label>
+            <input type="number" name="stock" placeholder="Product stock" class="products__input" id="stock">
+
+            <!--<label for="color" class="products__label">COLOR</label>
+            <input type="text" name="color" placeholder="Product color" id="color" required>-->
+
+            <label for="images" class="products__label">IMAGES</label>
+            <input type="file" name="images" id="images" class="products__upload" multiple>
+
+            <input type="submit" value="ADD PRODUCT" class="products__submit">
+        </form>
+    </section>
+
+    <figure class="background">
+        <img src="../images/add_product_bg.jpg" alt="Add product background">
+    </figure>
+
+    <script src="../js/addProduct.js" type="module"></script>
 </body>
 </html>
