@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc} from "firebase/firestore";
 
 async function getAllProducts(db) {
     const collectionRef = collection(db, "products");
@@ -16,6 +16,19 @@ async function getAllProducts(db) {
     }
 }
 
+async function getSingleProduct(id) {
+    const docRef = doc(db, "products", id);
+    try {
+        const docSnap = await getDoc(docRef);
+        const data = docSnap.data();
+    
+        return data; 
+    } catch(e) {
+        console.log(e);
+    }
+}
+
 export {
     getAllProducts,
+    getSingleProduct
 }
