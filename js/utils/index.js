@@ -1,3 +1,12 @@
+async function addProductToBag(bag) {
+    localStorage.setItem("bag", JSON.stringify(bag));
+};
+
+function getMyLocalBag() {
+    const myBag = localStorage.getItem("bag");
+    return myBag ? JSON.parse(myBag) : [];
+}
+
 function currencyFormat(price) {
     return new Intl.NumberFormat("en-UK", {
         style: 'currency',
@@ -7,5 +16,7 @@ function currencyFormat(price) {
 }
 
 export {
+    addProductToBag, 
+    getMyLocalBag,
     currencyFormat
 }

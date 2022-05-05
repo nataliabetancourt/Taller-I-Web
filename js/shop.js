@@ -1,7 +1,9 @@
 //Import necessary functions
-import { db } from "./app";
+import { db, auth } from "./app";
+import { onAuthStateChanged } from "firebase/auth";
+import { createFirebaseBag, getFirebaseBag } from "./functions/bag";
 import { getAllProducts } from "./functions/getProduct";
-import { currencyFormat } from "./utils";
+import { addProductToBag, getMyLocalBag, currencyFormat } from "./utils";
 
 //Get HTML elements
 const productSection = document.getElementById("productSection");
@@ -9,6 +11,8 @@ const categoryFilter = document.getElementById("category");
 const orderFilter = document.getElementById("price");
 
 let products = [];
+let bag = [];
+let userLogged = undefined;
 
 async function loadProducts() {
     //Get products from database
@@ -40,6 +44,35 @@ function renderProduct(item) {
         <button class="product__bag">ADD TO BAG</button>`;
 
     productSection.appendChild(product);
+
+    //Add to bag button
+    const addToBagBtn = product.querySelector(".product__bag");
+
+    //Counter for number of times product is added, adding variable to items
+    let counter = 0;
+    item.counter = counter;
+
+    addToBagBtn.addEventListener("click", async (e) => {
+        e.preventDefault(); //Avoid allowing the link to change screens
+
+        //Adding to counter every click
+        counter++;
+
+        //If its the first time adding the product to cart, add item to array and modify counter
+        if (counter == 1) {
+            item['counter'] = counter;
+            bag.push(item);        
+        //Else, only modify counter
+        } else {
+            item['counter'] = counter;
+        }
+
+        addProductToBag(bag);
+
+        if (userLogged) {
+            await createFirebaseBag(db, userLogged.uid, bag);
+        }
+    });
 }
 
 //Filter by category
@@ -79,6 +112,18 @@ categoryFilter.addEventListener("change", e => {
 
 orderFilter.addEventListener("change", e => {
     filterBy();
-})
+});
 
-loadProducts(); 
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      userLogged = user;
+      bag = await getFirebaseBag(db, userLogged.uid);
+    } else {
+        bag = getMyLocalBag();
+    }
+
+    loadProducts();
+
+  });
