@@ -17,18 +17,13 @@
             <a href="#"><img id="logo" src="../images/logo.png" alt="Logo"></a>
             <nav>
                 <ul class="list flex">
-                    <li class="list__item sans">SHOP</li>
-                    <li class="list__item sans">GIFTS</li>
-                    <li class="list__item sans">SERVICES</li>
-                    <li class="list__item sans">COMING SOON</li>
+                    <li class="list__item sans">ADD PRODUCT</li>
                 </ul>
             </nav>
         </div>
         <div class="icons">
             <img  class="icons__item" src="../images/profile.png" alt="Profile">
-            <img  class="icons__item" src="../images/heart.png" alt="Like">
             <img  class="icons__item" src="../images/search.png" alt="Search">
-            <img  class="icons__item" src="../images/bag.png" alt="Shop">
             <img src="../images/menu.png" alt="Menu" class="icons__item icons__item--menu">
         </div>
     </header>
@@ -57,9 +52,14 @@
             <label for="stock" class="products__label">STOCK</label>
             <input type="number" name="stock" placeholder="Product stock" class="products__input" id="stock">
 
-            <!--<label for="color" class="products__label">COLOR</label>
-            <input type="text" name="color" placeholder="Product color" id="color" required>-->
-
+            <label for="color" class="products__label">COLOR</label>
+            <div class="select">
+                <select name="color" id="color" class="products__input products__input--color">
+                    <option hidden disabled selected value>Select an option... </option>
+                </select>
+                <div id="colorBox"></div>
+            </div>
+            
             <label for="images" class="products__label">IMAGES</label>
             <input type="file" name="images" id="images" class="products__upload" multiple>
 

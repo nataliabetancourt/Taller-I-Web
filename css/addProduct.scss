@@ -111,6 +111,10 @@ ul {
         &--description {
             height: 70px;
         }
+
+        &--color {
+            width: 30%;
+        }
     }
 
     &__upload {
@@ -157,6 +161,20 @@ ul {
             font-weight: normal;
         }
     }
+
+}
+
+.select{
+    display: flex;
+}
+
+#colorBox {
+    display: flex;
+    margin: 7px 0 0 15px;
+    border: white solid 2px;
+    box-shadow: 0 0 0 2px $mainColor;
+    height: 36px;
+    width: 4%;
 }
 
 .background {
