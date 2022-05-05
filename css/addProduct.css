@@ -120,6 +120,10 @@ ul {
   height: 70px;
 }
 
+.products__input--color {
+  width: 30%;
+}
+
 .products__upload {
   display: block;
   margin: 8px 0;
@@ -167,6 +171,24 @@ ul {
   border: 2px solid #340C0C;
   background-color: #340C0C;
   font-weight: normal;
+}
+
+.select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#colorBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 7px 0 0 15px;
+  border: white solid 2px;
+  -webkit-box-shadow: 0 0 0 2px #340C0C;
+          box-shadow: 0 0 0 2px #340C0C;
+  height: 36px;
+  width: 4%;
 }
 
 .background {

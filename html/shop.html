@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shop.css">
+</head>
+<body>
+    <header class="header flex">
+        <div class="menu flex">
+            <a href="#"><img id="logo" src="../images/logo.png" alt="Logo"></a>
+            <nav>
+                <ul class="list flex">
+                    <li class="list__item sans">SHOP</li>
+                    <li class="list__item sans">GIFTS</li>
+                    <li class="list__item sans">SERVICES</li>
+                    <li class="list__item sans">COMING SOON</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="icons">
+            <img  class="icons__item" src="../images/profile.png" alt="Profile">
+            <img  class="icons__item" src="../images/heart.png" alt="Like">
+            <img  class="icons__item" src="../images/search.png" alt="Search">
+            <img  class="icons__item" src="../images/bag.png" alt="Shop">
+            <img src="../images/menu.png" alt="Menu" class="icons__item icons__item--menu">
+        </div>
+    </header>
+
+    <section class="filter">
+        <h2 class="filter__title">Browse All Beauty Products</h2>
+        <div class="filter__column">
+            <label for="category" class="filter__label">FILTER BY CATEGORY</label>
+            <select name="category" id="category" class="filter__select">
+                <option value="">All</option>
+                <option value="face">Face</option>
+                <option value="cheek">Cheek</option>
+                <option value="eyes">Eyes</option>
+                <option value="lips">Lips</option>
+            </select>
+
+            <label for="price" class="filter__label">ORDER BY PRICE</label>
+            <select name="price" id="price" class="filter__select">
+                <option value="">None</option>
+                <option value="down">Highest to lowest</option>
+                <option value="up">Lowest to highest</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="products" id="productSection">
+        <div class="loader"></div>
+    </section>
+    <script src="../js/shop.js" type="module"></script>
+</body>
+</html>
