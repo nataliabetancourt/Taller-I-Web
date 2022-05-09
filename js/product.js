@@ -32,7 +32,9 @@ async function loadProduct() {
 function renderProduct(product) {
     //Paint images
     productAssets.innerHTML = `
-        <img src="${product.images[0]}" class="product__main">`;
+        <div>
+        <img src="${product.images[0]}" class="product__main">
+        </div>`;
 
     //Paint information
     productInfo.innerHTML = `
@@ -48,7 +50,7 @@ function renderProduct(product) {
     gallery.className = "product__gallery";
 
     product.images.forEach(image => {
-        gallery.innerHTML += `<img src="${image}">`;
+        gallery.innerHTML += `<div><img src="${image}"></div>`;
     });
 
     productAssets.appendChild(gallery);
