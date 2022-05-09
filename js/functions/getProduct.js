@@ -16,7 +16,7 @@ async function getAllProducts(db) {
     }
 }
 
-async function getSingleProduct(id) {
+async function getSingleProduct(db, id) {
     const docRef = doc(db, "products", id);
     try {
         const docSnap = await getDoc(docRef);

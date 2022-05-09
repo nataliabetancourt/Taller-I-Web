@@ -34,7 +34,7 @@ function renderProduct(item) {
     product.setAttribute("href", `./product.html?id=${item.id}`);
 
     //Check for images, if there are no images, use placeholder
-    const coverImg = item.images ? item.images[0] : "../images/placeholder.jpg";
+    const coverImg = item.images.length ? item.images[0] : "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640";
 
     //Create product box
     product.innerHTML = `
