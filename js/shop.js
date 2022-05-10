@@ -57,7 +57,6 @@ function renderProduct(item) {
 
     //Counter for number of times product is added, adding variable to items
     let counter = 0;
-    item.counter = counter;
 
     addToBagBtn.addEventListener("click", async (e) => {
         e.preventDefault(); //Avoid allowing the link to change screens
@@ -189,4 +188,5 @@ onAuthStateChanged(auth, async (user) => {
     }
 
     loadProducts();
-  });
+});
+

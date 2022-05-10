@@ -12,6 +12,7 @@ const items = container.querySelectorAll('.rating-item');
 
 let color;
 let rating = "No rating";
+const counter = 0;
 
 productForm.category.addEventListener("change", e => {
     const productCategory = productForm.category.value;
@@ -87,6 +88,7 @@ productForm.addEventListener("submit", async (e) =>{
         stock, 
         color,
         images: imageGallery,
+        counter
     }
 
     //Add product to firestore database
