@@ -7,8 +7,11 @@ import { colors } from './utils';
 const productForm = document.getElementById("productsForm");
 const productColors = document.getElementById("color");
 const colorBox = document.getElementById("colorBox");
+const container = document.querySelector('.rating');
+const items = container.querySelectorAll('.rating-item');
 
 let color;
+let rating = "No rating";
 
 productForm.category.addEventListener("change", e => {
     const productCategory = productForm.category.value;
@@ -36,6 +39,20 @@ productForm.category.addEventListener("change", e => {
             hex: productColors.value
         }; 
     });
+});
+
+container.addEventListener("click", e => {
+    const elClass = e.target.classList;
+    // change the rating if the user clicks on a different star
+    if (!elClass.contains('active')) {
+         // reset the active class on the star
+        items.forEach(item => item.classList.remove('active'));
+
+        //add active class to the clicked star
+        rating = e.target.getAttribute("data-rate");
+        console.log(rating);
+        elClass.add('active'); 
+    }
 });
 
 productForm.addEventListener("submit", async (e) =>{
@@ -76,3 +93,5 @@ productForm.addEventListener("submit", async (e) =>{
     await addProduct(db, newProduct);
     productForm.reset();
 });
+
+console.log("hola");
