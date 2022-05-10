@@ -3,16 +3,22 @@ import { db, auth } from "./app";
 import { onAuthStateChanged } from "firebase/auth";
 import { createFirebaseBag, getFirebaseBag } from "./functions/bag";
 import { getAllProducts } from "./functions/getProduct";
-import { addProductToBag, getMyLocalBag, currencyFormat } from "./utils";
+import { addProductToBag, getMyLocalBag, currencyFormat, colors } from "./utils";
 
 //Get HTML elements
 const productSection = document.getElementById("productSection");
 const categoryFilter = document.getElementById("category");
-const orderFilter = document.getElementById("price");
+const stockFilter = document.getElementById("stock");
+const colorFilter = document.getElementById("color");
+const orderPriceFilter = document.getElementById("price");
+const orderNameFilter = document.getElementById("name");
 
 let products = [];
 let bag = [];
 let userLogged = undefined;
+
+//Start empty array for product colors 
+filteredColor = [];
 
 async function loadProducts() {
     //Get products from database
@@ -40,6 +46,7 @@ function renderProduct(item) {
     product.innerHTML = `
         <img src="${coverImg}" alt="${item.name}" class="product__img">
         <h2 class="product__name">${item.name}</h2>
+        <h3 class="product__color">${item.color.name.toUpperCase()}</h3>
         <h3 class="product__price">${currencyFormat(item.price)}</h3>
         <button class="product__bag">ADD TO BAG</button>`;
 
@@ -75,42 +82,99 @@ function renderProduct(item) {
     });
 }
 
+//Set color filter with options
+function colorSelector() {
+    const productCategory = categoryFilter.value;
+
+    //Get palette from category array
+    const { palette } = colors.find(color => color.category === productCategory);
+
+    //Create new array with html elements, based on color information
+    const colorsOption = palette.map((color) => {
+        return `<option value="${color.hex}">${color.name}</option>`
+    });
+
+    //Set select with options
+    colorFilter.innerHTML = colorsOption;
+}
+
+function renderArray(array) {
+    //Paint new array of products based on filter
+    productSection.innerHTML = "";
+    array.forEach(product => {
+        renderProduct(product);
+    });
+}
+ 
 //Filter by category
 function filterBy() {
     const newCategory = categoryFilter.value;
-    const newOrder = orderFilter.value;
+    const newStock = stockFilter.value;
+
+    const newPriceOrder = orderPriceFilter.value;
+    const newAlphaOrder = orderNameFilter.value;
 
     let filteredProducts = [];
 
-    //Check if selected option has a value
+    //Check if selected category option has a value
     if (newCategory !== "") {
+        //Filter for category
         filteredProducts = products.filter((product) => product.category === newCategory);
+
+        //Filter for color
+        filteredProducts = products.filter((product) => product.color.hex === colorFilter.value);
     } else {
         filteredProducts = products;
     }
 
+    //Check if selected stock option has a value
+    if (newStock === "Stock") {
+        filteredProducts = products.filter((product) => product.stock > 0);
+    } if (newStock === "None") {
+        filteredProducts = products.filter((product) => product.stock <= 0);
+    } 
+
     //Check if price is going up or down 
-    if (newOrder == "up") {
+    if (newPriceOrder == "up") {
         filteredProducts = filteredProducts.sort((a, b) => a.price - b.price);
     } 
 
-    if (newOrder == "down") {
+    if (newPriceOrder == "down") {
         filteredProducts = filteredProducts.sort((a, b) => b.price - a.price);
     } 
-    
-    //Paint new array of products based on filter
-    productSection.innerHTML = "";
-    filteredProducts.forEach(product => {
-        renderProduct(product);
-    })
 
+    //Check what order the user wishes for (a to z, z to a)
+    if (newAlphaOrder == "down") {
+        filteredProducts.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+    }
+
+    if (newAlphaOrder == "up") {
+        filteredProducts.sort((a, b) => b.name.toLowerCase().localeCompare(a.name.toLowerCase()));
+    }
+
+    renderArray(filteredProducts);
 }
 
 categoryFilter.addEventListener("change", e => {
     filterBy();
+
+    //Show colors based on category
+    colorSelector();
 });
 
-orderFilter.addEventListener("change", e => {
+stockFilter.addEventListener("change", e => {
+    filterBy();
+});
+
+colorFilter.addEventListener("change", e => {
+    filterBy();
+});
+
+orderPriceFilter.addEventListener("change", e => {
+    filterBy();
+});
+
+orderNameFilter.addEventListener("change", e => {
     filterBy();
 });
 
@@ -125,5 +189,4 @@ onAuthStateChanged(auth, async (user) => {
     }
 
     loadProducts();
-
   });

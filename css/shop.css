@@ -97,12 +97,14 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 8px;
 }
 
 .filter__label {
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
   color: #340C0C;
+  font-size: 1em;
   font-weight: normal;
   display: block;
   margin: 5px 0 0 15px;
@@ -116,11 +118,11 @@ ul {
   padding: 0 5px;
   width: 10%;
   height: 30px;
-  margin: 10px 0 0 5px;
+  margin: 10px 0 0 12px;
 }
 
 .products {
-  margin: 160px 72px;
+  margin: 150px 72px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,12 +159,20 @@ ul {
   margin-top: 15px;
 }
 
+.product__color {
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #5C302F;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
 .product__price {
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
   color: #340C0C;
   font-size: 1.125em;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .product__bag {

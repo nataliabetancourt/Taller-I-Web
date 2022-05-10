@@ -45,11 +45,32 @@
                 <option value="lips">Lips</option>
             </select>
 
+            <label for="stock" class="filter__label">FILTER BY STOCK</label>
+            <select name="stock" id="stock" class="filter__select">
+                <option value="">None</option>
+                <option value="None">Not in stock</option>
+                <option value="Stock">Stock</option>
+            </select>
+
+            <label for="stock" class="filter__label">FILTER BY COLOR</label>
+            <select name="color" id="color" class="filter__select">
+            </select>
+
+        </div>
+
+        <div class="filter__column">
             <label for="price" class="filter__label">ORDER BY PRICE</label>
             <select name="price" id="price" class="filter__select">
                 <option value="">None</option>
                 <option value="down">Highest to lowest</option>
                 <option value="up">Lowest to highest</option>
+            </select>
+
+            <label for="name" class="filter__label">ORDER BY NAME</label>
+            <select name="name" id="name" class="filter__select">
+                <option value="">None</option>
+                <option value="down">A to Z</option>
+                <option value="up">Z to A</option>
             </select>
         </div>
     </section>
