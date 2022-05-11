@@ -81,3 +81,124 @@ ul {
         display: none;
     }
 }
+
+.container {
+    position: relative;
+    top: 110px;
+    margin: 0 50px;
+
+    &__title {
+        @include serifStyle();
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+}
+
+.bag {
+    background-color: $lightColor;
+    padding: 30px;
+    margin-bottom: 30px;
+
+    & li {
+        position: relative;
+        background-color: white;
+        display: flex;
+        height: 250px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    &__infosection {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        margin: 70px 20px;
+    }
+
+    &__name {
+        @include serifStyle();
+    }
+
+    &__info {
+        @include sansStyle();
+        margin-top: 6px;
+    }
+
+    &__btn {
+        //Postion
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border: none;
+
+        //Text
+        @include sansStyle();
+        font-size: 1.5em;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    &__quantity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        background-color: transparent;
+        border: 2px solid $secondaryColor;
+        border-radius: 5px;
+        width: 100px;
+        @include sansStyle();
+
+        &btn {
+            @include sansStyle();
+            font-weight: normal;
+            font-size: 1em;
+            width: 30%;
+            height: 25px;
+            border: transparent;
+
+            &--left {
+                border-right: 2px solid $mainColor;
+            }
+
+            &--right {
+                border-left: 2px solid $mainColor;
+            }
+
+            &:hover {
+                background-color: $secondaryColor;
+                color: $lightColor
+            }
+        }
+    }
+}
+
+.total {
+    @include sansStyle();
+    padding: 30px;
+    border-top: 2px solid $mainColor;
+
+    &__first {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    &__checkout {
+        width: 100%;
+        height: 40px;
+        @include sansStyle($theme: $accentColor);
+        background-color: $secondaryColor;
+        border: 2px solid $secondaryColor;
+
+        &:hover {
+            background-color: $mainColor;
+            border: 2px solid $mainColor;
+            font-weight: normal;
+        }
+    }
+
+}

@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My bag</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/bag.css">
 </head>
 <body>
@@ -29,10 +33,18 @@
         </div>
     </header>
 
-    <section>
-        <h2 class="title">Shopping bag</h2>
+    <section class="container">
+        <h2 class="container__title">Shopping bag</h2>
         <ul class="bag" id="bagSection"></ul>
-        <div id="totalSection"></div>
+        <div class="total">
+            <div class="total__first">
+                <h2 class="total__title">TOTAL:</h2>
+                <h2 class="total__total" id="totalSection">0</h2>
+            </div>
+            <div>
+                <button class="total__checkout">GO TO CHECKOUT</button>
+            </div>
+        </div>
     </section>
 
     <script src="../js/bag.js" type="module"></script>

@@ -101,7 +101,7 @@ function createGallery(images) {
     galleryImgs.addEventListener("click", e => {
         if (e.target.tagName === "IMG") {
             mainImage.setAttribute("src", e.target.currentSrc);
-            console.log("click");
+
         }
     });
 }
@@ -120,4 +120,3 @@ onAuthStateChanged(auth, async (user) => {
     loadProduct();
 });
 
-console.log(bag);

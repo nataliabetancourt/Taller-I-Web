@@ -73,4 +73,152 @@ ul {
 .icons__item--menu {
   display: none;
 }
+
+.container {
+  position: relative;
+  top: 110px;
+  margin: 0 50px;
+}
+
+.container__title {
+  font-family: "Marcellus", serif;
+  color: #340C0C;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.bag {
+  background-color: #FFF3EC;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.bag li {
+  position: relative;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 250px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.bag__infosection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+  margin: 70px 20px;
+}
+
+.bag__name {
+  font-family: "Marcellus", serif;
+  color: #340C0C;
+}
+
+.bag__info {
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #340C0C;
+  margin-top: 6px;
+}
+
+.bag__btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #340C0C;
+  font-size: 1.5em;
+  font-weight: normal;
+  text-align: center;
+}
+
+.bag__quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 15px;
+  background-color: transparent;
+  border: 2px solid #5C302F;
+  border-radius: 5px;
+  width: 100px;
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #340C0C;
+}
+
+.bag__quantitybtn {
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #340C0C;
+  font-weight: normal;
+  font-size: 1em;
+  width: 30%;
+  height: 25px;
+  border: transparent;
+}
+
+.bag__quantitybtn--left {
+  border-right: 2px solid #340C0C;
+}
+
+.bag__quantitybtn--right {
+  border-left: 2px solid #340C0C;
+}
+
+.bag__quantitybtn:hover {
+  background-color: #5C302F;
+  color: #FFF3EC;
+}
+
+.total {
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #340C0C;
+  padding: 30px;
+  border-top: 2px solid #340C0C;
+}
+
+.total__first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.total__checkout {
+  width: 100%;
+  height: 40px;
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #EEC9AF;
+  background-color: #5C302F;
+  border: 2px solid #5C302F;
+}
+
+.total__checkout:hover {
+  background-color: #340C0C;
+  border: 2px solid #340C0C;
+  font-weight: normal;
+}
 /*# sourceMappingURL=bag.css.map */

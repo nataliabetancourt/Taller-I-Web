@@ -33,23 +33,35 @@ async function removeProduct(productId) {
 
 function renderProduct(product) {
     const bagProduct = document.createElement("li");
+    bagProduct.className = "bag__container";
 
     bagProduct.innerHTML = `
-        <img src="${product.images[0]}" alt="">
-        <h3>${product.name}</h3>
-        <p>${product.color.name.toUpperCase()}</p>
-        <p>${currencyFormat(product.price)}</p>
-        <button>x</button>`;
+        <img src="${product.images[0]}" alt="" class="bag__image">
+        <div class="bag__infosection">
+            <h3 class="bag__name">${product.name}</h3>
+            <p class="bag__info">${product.color.name.toUpperCase()}</p>
+            <p class="bag__info">${currencyFormat(product.price)}</p>
+            <button class="bag__btn" id="delete">x</button>
+            <div class="bag__quantity""><button class="bag__quantitybtn bag__quantitybtn--left" id="subtract">-</button>${product.counter}<button class="bag__quantitybtn bag__quantitybtn--right" id="add">+</button></div>
+        </div>`;
 
     bagSection.appendChild(bagProduct);
 
     //Delete button
     bagProduct.addEventListener("click", e => {
-        if (e.target.tagName === "BUTTON") {
+        console.log(e.target.id);
+        //Delete product
+        if (e.target.id === "delete") {
             console.log("go");
             removeProduct(product.id);
         }
-    });
+
+        //PREGUNTAR COMO HACERLO
+        //Add product
+        if (e.target.id === "add") {
+            console.log("add");
+        }
+    }); 
 
 }
 

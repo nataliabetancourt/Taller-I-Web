@@ -11,11 +11,13 @@ const categoryFilter = document.getElementById("category");
 const stockFilter = document.getElementById("stock");
 const colorFilter = document.getElementById("color");
 const orderPriceFilter = document.getElementById("price");
+const orderRatingsFilter = document.getElementById("rating");
 const orderNameFilter = document.getElementById("name");
 
 let products = [];
 let bag = [];
 let userLogged = undefined;
+let stars = undefined;
 
 //Start empty array for product colors 
 filteredColor = [];
@@ -32,10 +34,28 @@ async function loadProducts() {
     products = firebaseProducts;
 }
 
+function showRatings(rating) {
+    //Check if rating is 5
+    if (rating > 4) {
+        stars = "https://firebasestorage.googleapis.com/v0/b/web-charlotte-shop.appspot.com/o/images%2F5star.png?alt=media&token=0e7dfd68-9a75-44a2-b477-f2cce7fc328e";
+    } else if(rating > 3) {
+        stars = "https://firebasestorage.googleapis.com/v0/b/web-charlotte-shop.appspot.com/o/images%2F4star.png?alt=media&token=f49f353d-a4c2-4bbb-b52f-bf7c3b8ad795";
+    } else if (rating > 2) {
+        stars = "https://firebasestorage.googleapis.com/v0/b/web-charlotte-shop.appspot.com/o/images%2F3star.png?alt=media&token=bfe458d0-3bd8-48b1-a5c8-f4bc64198184";
+    } else if (rating > 1) {
+        stars = "https://firebasestorage.googleapis.com/v0/b/web-charlotte-shop.appspot.com/o/images%2F2star.png?alt=media&token=b0ed27fc-5c7b-4c16-9a49-fbd26011c043";
+    } else if (rating > 0) {
+        stars = "https://firebasestorage.googleapis.com/v0/b/web-charlotte-shop.appspot.com/o/images%2F1star.png?alt=media&token=bcb5f492-8e45-4e5a-b739-502407478091";
+    }
+}
+
 function renderProduct(item) {
     const product = document.createElement("a");
     product.className = "product";
 
+    //Get rating image for each product
+    showRatings(item.rating);
+    
     //Set link for each product
     product.setAttribute("href", `./product.html?id=${item.id}`);
 
@@ -45,10 +65,15 @@ function renderProduct(item) {
     //Create product box
     product.innerHTML = `
         <img src="${coverImg}" alt="${item.name}" class="product__img">
-        <h2 class="product__name">${item.name}</h2>
-        <h3 class="product__color">${item.color.name.toUpperCase()}</h3>
-        <h3 class="product__price">${currencyFormat(item.price)}</h3>
-        <button class="product__bag">ADD TO BAG</button>`;
+        <div>
+            <h2 class="product__name">${item.name}</h2>
+            <h3 class="product__color">${item.color.name.toUpperCase()}</h3>
+            <div class="product__bottom">
+                <h3 class="product__price">${currencyFormat(item.price)}</h3>
+                <img src="${stars}" class="product__rating">
+            </div>
+            <button class="product__bag">ADD TO BAG</button>
+        </div>`;
 
     productSection.appendChild(product);
 
@@ -111,6 +136,7 @@ function filterBy() {
     const newStock = stockFilter.value;
 
     const newPriceOrder = orderPriceFilter.value;
+    const newRatingsOrder = orderRatingsFilter.value;
     const newAlphaOrder = orderNameFilter.value;
 
     let filteredProducts = [];
@@ -142,6 +168,15 @@ function filterBy() {
         filteredProducts = filteredProducts.sort((a, b) => b.price - a.price);
     } 
 
+    //Check if ratings are going up or down 
+    if (newRatingsOrder == "up") {
+        filteredProducts = filteredProducts.sort((a, b) => a.rating - b.rating);
+    } 
+
+    if (newRatingsOrder == "down") {
+        filteredProducts = filteredProducts.sort((a, b) => b.rating - a.rating);
+    } 
+
     //Check what order the user wishes for (a to z, z to a)
     if (newAlphaOrder == "down") {
         filteredProducts.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
@@ -170,6 +205,10 @@ colorFilter.addEventListener("change", e => {
 });
 
 orderPriceFilter.addEventListener("change", e => {
+    filterBy();
+});
+
+orderRatingsFilter.addEventListener("change", e => {
     filterBy();
 });
 

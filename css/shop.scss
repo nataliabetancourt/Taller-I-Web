@@ -122,9 +122,13 @@ ul {
 .product {
     display: block;
     width: 25%;
-    height: 560px;
-    margin: 0 10px 30px 10px;
+    min-height: 515px;
+    margin: 0 10px 40px 10px;
     align-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: space-between;
 
     &__img {
         width: 100%;
@@ -146,6 +150,18 @@ ul {
         margin-top: 5px;
     }
 
+    &__bottom {
+        display: flex;
+        height: 30px;
+        justify-content: space-between;
+    }
+
+    &__rating {
+        height: 15px;
+        object-fit: contain;
+        margin: 12px
+    }
+
     &__price {
         @include sansStyle();
         font-size: 1.125em;
@@ -161,6 +177,7 @@ ul {
         margin-top: 10px;
         justify-content: flex-end;
         @include sansStyle();
+        cursor: pointer;
 
         &:hover {
             background-color: $secondaryColor;
