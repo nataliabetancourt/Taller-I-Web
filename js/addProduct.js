@@ -19,7 +19,6 @@ productForm.category.addEventListener("change", e => {
 
     //Get palette from category array
     const { palette } = colors.find(color => color.category === productCategory);
-    console.log(palette);
 
     //Create new array with html elements, based on color information
     const colorsOption = palette.map((color) => {
@@ -51,7 +50,6 @@ container.addEventListener("click", e => {
 
         //add active class to the clicked star
         rating = e.target.getAttribute("data-rate");
-        console.log(rating);
         elClass.add('active'); 
     }
 });
@@ -87,6 +85,7 @@ productForm.addEventListener("submit", async (e) =>{
         description, 
         stock, 
         color,
+        rating,
         images: imageGallery,
         counter
     }
@@ -95,5 +94,3 @@ productForm.addEventListener("submit", async (e) =>{
     await addProduct(db, newProduct);
     productForm.reset();
 });
-
-console.log("hola");
