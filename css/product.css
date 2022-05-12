@@ -53,6 +53,14 @@ ul {
   color: #FFF3EC;
 }
 
+.list__item:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  font-weight: normal;
+  cursor: pointer;
+  color: #EEC9AF;
+}
+
 #logo {
   width: -webkit-fit-content;
   width: -moz-fit-content;

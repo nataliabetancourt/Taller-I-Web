@@ -46,11 +46,21 @@ ul {
 }
 
 .list__item {
+  margin-top: 3px;
   margin-left: 40px;
   color: #FFF3EC;
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
   color: #FFF3EC;
+  text-align: center;
+}
+
+.list__item:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  font-weight: normal;
+  cursor: pointer;
+  color: #EEC9AF;
 }
 
 #logo {
@@ -68,6 +78,11 @@ ul {
   margin-right: 30px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.icons__item:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .icons__item--menu {

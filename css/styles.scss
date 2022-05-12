@@ -59,9 +59,18 @@ ul {
     list-style: none;
 
     &__item {
+        margin-top: 3px;
         margin-left: 40px;
         color: #FFF3EC;
         @include sansStyle($theme: $lightColor);
+        text-align: center;
+
+        &:hover {
+            transform: scale(1.1);
+            font-weight: normal;
+            cursor: pointer;
+            color: $accentColor;
+        }
     }
 }
 
@@ -75,6 +84,10 @@ ul {
     height: 25px;
     margin-right: 30px;
     object-fit: cover;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 
     &--menu {
         display: none;
