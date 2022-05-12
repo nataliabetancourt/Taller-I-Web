@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+<body>
+    <header class="header flex">
+        <div class="menu flex">
+            <a href="./index.html"><img id="logo" src="../images/logo.png" alt="Logo"></a>
+            <nav>
+                <ul class="list flex">
+                    <a href="./shop.html"><li class="list__item sans">SHOP</li></a>
+                    <li class="list__item sans">GIFTS</li>
+                    <li class="list__item sans">SERVICES</li>
+                    <li class="list__item sans">COMING SOON</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="icons">
+            <a href="./register.html"><img  class="icons__item" src="../images/profile.png" alt="Profile"></a>
+            <img  class="icons__item" src="../images/heart.png" alt="Like">
+            <img  class="icons__item" src="../images/search.png" alt="Search">
+            <a href="./bag.html"><img  class="icons__item" src="../images/bag.png" alt="Shop"></a>
+            <img src="../images/menu.png" alt="Menu" class="icons__item icons__item--menu">
+        </div>
+    </header>
+
+    <section class="checkout">
+        <div class="checkout__checkout">
+            <h2 class="checkout__title">Checkout information</h2>
+    
+            <form action="" id="checkoutForm">
+                <h4 class="checkout__subtitle">CONTACT INFORMATION</h4>
+                <div class="checkout__names">
+                    <div class="checkout__subcolumn">
+                        <label for="firstname" class="checkout__label">FIRST NAME</label>
+                        <input type="text" id="firstname" name="firstname" class="checkout__input checkout__input--column" placeholder="First name">
+                    </div>
+    
+                    <div class="checkout__subcolumn">
+                        <label for="lastname" class="checkout__label">LAST NAME</label>
+                        <input type="text" id="lastname" name="lastname" class="checkout__input checkout__input--column" placeholder="Last name">
+                    </div>
+                </div>
+    
+                <label for="address" class="checkout__label">ADDRESS</label>
+                <input type="text" id="address" name="address" class="checkout__input" placeholder="Address">
+    
+                <label for="city" class="checkout__label">CITY</label>
+                <input type="text" id="city" name="city" class="checkout__input" placeholder="City">
+    
+                <label for="cell" class="checkout__label">CELLPHONE NUMBER</label>
+                <input type="text" name="cell" placeholder="Cellphone number" id="cell" class="checkout__input">
+    
+                <h4 class="checkout__subtitle checkout__subtitle--after">SHIPPING INFORMATION</h4>
+                <p class="checkout__paragraph">Note: deliveries to PO Boxes in Continental U.K. ship by Standard method and may take up to 8 business days. For more information on shipping times, please refer to our shipping policies.</p>
+                <select name="shipping" id="shipping" class="checkout__input">
+                    <option hidden disabled selected value>Select an option... </option>
+                    <option value="standard">Standard (3 - 5 Buisness Days)</option>
+                    <option value="expedited">Expedited (Up to 2 Buisness Days)</option>
+                    <option value="overnight">Overnight (1 Buisness Day)</option>
+                </select>
+                <p class="checkout__paragraph checkout__paragraph--price" id="shippingPrice"></p>
+    
+                <h4 class="checkout__subtitle checkout__subtitle--after">PAYMENT INFORMATION</h4>
+                <label for="card" class="checkout__label">CARD NUMBER</label>
+                <input type="number" id="card" name="card" class="checkout__input" placeholder="Card number">
+                <div class="checkout__names">
+                    <div class="checkout__subcolumn">
+                        <label for="expiration" class="checkout__label">EXPIRATION DATE</label>
+                        <input type="date" id="expiration" name="expiration" class="checkout__input checkout__input--column">
+                    </div>
+    
+                    <div class="checkout__subcolumn">
+                        <label for="lastname" class="checkout__label">SECURITY CODE</label>
+                        <input type="text" id="lastname" name="lastname" class="checkout__input checkout__input--column" placeholder="Security code">
+                    </div>
+                </div>
+    
+                <input type="submit" value="BUY NOW" class="checkout__submit">
+            </form>
+        </div>
+
+        <div class="checkout__order">
+            <h4 class="checkout__title checkout__title--order">Order</h4>
+        </div>
+    </section>
+    <script src="../js/checkout.js" type="module"></script>
+</body>
+</html>

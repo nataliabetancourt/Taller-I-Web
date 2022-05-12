@@ -46,11 +46,13 @@ ul {
 }
 
 .list__item {
+  margin-top: 3px;
   margin-left: 40px;
   color: #FFF3EC;
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
   color: #FFF3EC;
+  text-align: center;
 }
 
 .list__item:hover {
@@ -76,6 +78,11 @@ ul {
   margin-right: 30px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.icons__item:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .icons__item--menu {
@@ -117,33 +124,39 @@ ul {
 }
 
 .product__color {
-  margin-top: 10px;
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
   color: #340C0C;
-  font-size: 1.18em;
-  font-weight: normal;
-  margin-top: 20px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-size: 1.3em;
 }
 
 .product__price {
-  margin-top: 10px;
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
   color: #340C0C;
-  font-size: 1.18em;
-  font-weight: normal;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  font-size: 1.3em;
 }
 
 .product__description {
-  margin-top: 10px;
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
   color: #340C0C;
-  font-size: 1.18em;
-  font-weight: normal;
+  font-weight: lighter;
+  margin-bottom: 5px;
   font-size: 1em;
   width: 85%;
+}
+
+.product__rating {
+  margin-top: 15px;
+  height: 15px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .product__bag {
@@ -154,7 +167,7 @@ ul {
   border: 2px solid #5C302F;
   padding: 10px 40px;
   width: 50%;
-  margin-top: 40px;
+  margin-top: 30px;
   font-weight: normal;
   display: block;
   cursor: pointer;

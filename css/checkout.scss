@@ -37,12 +37,6 @@ ul {
     font-weight: normal;
 }
 
-@mixin text {
-    @include sansStyle();
-    font-weight: lighter;
-    margin-bottom: 5px;
-}
-
 .flex {
     display: flex;
 }
@@ -100,103 +94,94 @@ ul {
     }
 }
 
-.product {
-    display: flex;
+.checkout {
     position: relative;
-    top: 150px;
+    top: 120px;
     margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
 
-    &__block {
-        position: absolute;
-        width: 60%;
-        height: 540px;
-        background-color: $lightColor;
-        bottom: 0;
-        right: 0;
-        z-index: -1;
-    }
-
-    &__info {
+    &__checkout {
         width: 50%;
     }
 
-    &__assets {
-        width: 50%;
+    &__names {
+        display: flex;
+        justify-content: space-between;
     }
 
-    &__name {
-        margin-top: 100px;
+    &__subcolumn {
+        display: block;
+        width: 48%;
+    }
+
+    &__title {
         @include serifStyle();
-        font-size: 2em;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+
+        &--order {
+            margin: 25px 0 0 30px;
+            font-size: 1.5em;
+        }
     }
 
-    &__color {
-        @include text();
-        margin-top: 10px;
-        font-size: 1.3em;
-    }
-
-    &__price {
-        @include text();
-        font-size: 1.3em;
-    }
-
-    &__description {
-        @include text();
-        font-size: 1em;
-        width: 85%;
-    }
-
-    &__rating {
-        margin-top: 15px;
-        height: 15px;
-        object-fit: contain;
-    }
-
-    &__bag {
+    &__subtitle {
         @include sansStyle();
-        background-color: transparent;
+        font-size: 1.1em;
+        font-weight: 500;
+        margin-bottom: 10px;
+
+        &--after {
+            margin-top: 40px;
+        }
+    }
+
+    &__label {
+        @include sansStyle();
+        font-weight: 300;
+    }
+    
+    &__input {
+        display: block;
+        @include sansStyle();
+        font-size: 1em;
+        border: solid 2px $mainColor;
+        padding: 5px;
+        width: 100%;
+        height: 40px;
+        margin-top: 5px;
+        margin-bottom: 18px;  
+    }
+
+    &__paragraph {
+        @include sansStyle();
+        margin-bottom: 15px;
+
+        &--price {
+            font-weight: normal;
+        }
+    }
+
+    &__submit {
+        @include sansStyle($theme: $accentColor);
+        background-color: $secondaryColor;
         border: 2px solid $secondaryColor;
         padding: 10px 40px;
-        width: 50%;
-        margin-top: 30px;
-        font-weight: normal;
-        display: block;
-        cursor: pointer;
+        width: 100%;
+        margin: 10px 0 30px 0;
+        font-weight: lighter;
 
         &:hover {
-            background-color: $secondaryColor;
-            color: $accentColor;
+            border: 2px solid #340C0C;
+            background-color: #340C0C;
+            font-weight: normal;
         }
     }
 
-    &__assets {
-        display: flex;
-        flex-direction: row-reverse;
-        width: 100%;
-    }
-
-    &__main {
-        width: 80%;
-        height: 550px;
-        background-color: white;
-        object-fit: contain;
-        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
-        margin: 0 0 40px 40px;
-    }
-
-    &__gallery {
-        width: 15%;
-        margin-left: 20px;
-        display: flex;
-        justify-content: end;
-        flex-direction: column;
-        margin-bottom: 30px;
-
-        & img {
-            width: 100%;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
+    &__order {
+        background-color: $lightColor;
+        width: 45%;
+        margin: 30px 30px 30px 20px;
     }
 }

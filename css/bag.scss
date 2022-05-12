@@ -200,11 +200,13 @@ ul {
     }
 
     &__checkout {
+        display: block;
         width: 100%;
-        height: 40px;
+        line-height: 40px;
         @include sansStyle($theme: $accentColor);
         background-color: $secondaryColor;
         border: 2px solid $secondaryColor;
+        text-align: center;
 
         &:hover {
             background-color: $mainColor;

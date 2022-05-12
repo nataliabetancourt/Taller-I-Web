@@ -34,6 +34,21 @@ async function loadProduct() {
     renderProduct(product);
 }
 
+function showRatings(rating) {
+    //Check if rating is 5
+    if (rating > 4) {
+        stars = "https://firebasestorage.googleapis.com/v0/b/web-charlotte-shop.appspot.com/o/images%2F5star.png?alt=media&token=0e7dfd68-9a75-44a2-b477-f2cce7fc328e";
+    } else if(rating > 3) {
+        stars = "https://firebasestorage.googleapis.com/v0/b/web-charlotte-shop.appspot.com/o/images%2F4star.png?alt=media&token=f49f353d-a4c2-4bbb-b52f-bf7c3b8ad795";
+    } else if (rating > 2) {
+        stars = "https://firebasestorage.googleapis.com/v0/b/web-charlotte-shop.appspot.com/o/images%2F3star.png?alt=media&token=bfe458d0-3bd8-48b1-a5c8-f4bc64198184";
+    } else if (rating > 1) {
+        stars = "https://firebasestorage.googleapis.com/v0/b/web-charlotte-shop.appspot.com/o/images%2F2star.png?alt=media&token=b0ed27fc-5c7b-4c16-9a49-fbd26011c043";
+    } else if (rating > 0) {
+        stars = "https://firebasestorage.googleapis.com/v0/b/web-charlotte-shop.appspot.com/o/images%2F1star.png?alt=media&token=bcb5f492-8e45-4e5a-b739-502407478091";
+    }
+}
+
 function renderProduct(product) {
     //Paint images
     productAssets.innerHTML = `
@@ -41,12 +56,16 @@ function renderProduct(product) {
         <img src="${product.images[0]}" class="product__main" id="mainImg">
         </div>`;
 
+    //Get rating image for each product
+    showRatings(product.rating);
+
     //Paint information
     productInfo.innerHTML = `
         <h1 class="product__name">${product.name}</h1>
         <h2 class="product__color">${product.color.name.toUpperCase()}</h2>
         <h2 class="product__price">${currencyFormat(product.price)}</h2>
         <p class="product__description">${product.description}</p>
+        <img src="${stars}" class="product__rating">
         <button class="product__bag">ADD TO BAG</button>`;
 
     if (product.images.length > 1) {
