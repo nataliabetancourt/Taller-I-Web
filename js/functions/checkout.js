@@ -1,11 +1,13 @@
-import { addDoc, collection } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 
-async function addOrder (db, order) {
+async function addOrder (db, order, userId) {
     try {
-        await addDoc(collection(db, "orders"), order);
-        console.log("Order added");
-    } catch (error) {
-        console.log(error);
+        await setDoc(doc(db, "orders", userId), {
+            order
+        });
+        console.log("order added");
+    } catch (e) {
+        console.log(e);
     }
 }
 

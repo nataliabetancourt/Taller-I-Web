@@ -1,4 +1,4 @@
-import { setDoc, doc, getDoc } from "firebase/firestore";
+import { setDoc, doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 
 async function createFirebaseBag(db, userId, bag) {
     try {
@@ -17,7 +17,27 @@ async function getFirebaseBag(db, userId) {
     return (result) ? result.bag : [];
 }
 
+async function deleteFromBag(db, userId) {
+    try {
+        const docRef = doc(db, "bag", userId);
+        await deleteDoc(docRef)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function changeCounter(db, userId, counterValue){
+    try {
+        const productRef = doc(db, "bag", userId);
+        await updateDoc(productRef, { counter: counterValue});
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export {
     createFirebaseBag,
-    getFirebaseBag
+    getFirebaseBag,
+    deleteFromBag,
+    changeCounter
 }

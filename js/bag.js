@@ -1,6 +1,6 @@
 import { db, auth } from "./app";
 import { onAuthStateChanged } from "firebase/auth";
-import { getFirebaseBag, createFirebaseBag } from "./functions/bag";
+import { getFirebaseBag, createFirebaseBag, changeCounter } from "./functions/bag";
 import { currencyFormat, getMyLocalBag, addProductToBag } from "./utils";
 
 //Get HTML elements
@@ -45,14 +45,10 @@ function renderProduct(product) {
             <p class="bag__info">${product.color.name.toUpperCase()}</p>
             <p class="bag__info">${currencyFormat(product.price)}</p>
             <button class="bag__btn" id="delete">x</button>
-            <div class="bag__quantity""><button class="bag__quantitybtn bag__quantitybtn--left" id="subtract">-</button>${product.counter}<button class="bag__quantitybtn bag__quantitybtn--right" id="add">+</button></div>
+            <p class="bag__info">Quantity: ${product.counter}</p>
         </div>`;
 
     bagSection.appendChild(bagProduct);
-
-    const bagBtn = bagProduct.querySelector(".bag__quantitybtn--right");
-
-
 
     //Delete button
     bagProduct.addEventListener("click", e => {

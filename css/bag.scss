@@ -124,7 +124,7 @@ ul {
         display: flex;
         flex-direction: column;
         width: 30%;
-        margin: 70px 20px;
+        margin: 60px 20px;
     }
 
     &__name {
@@ -152,40 +152,6 @@ ul {
         font-weight: normal;
         text-align: center;
     }
-
-    &__quantity {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 15px;
-        background-color: transparent;
-        border: 2px solid $secondaryColor;
-        border-radius: 5px;
-        width: 100px;
-        @include sansStyle();
-
-        &btn {
-            @include sansStyle();
-            font-weight: normal;
-            font-size: 1em;
-            width: 30%;
-            height: 25px;
-            border: transparent;
-
-            &--left {
-                border-right: 2px solid $mainColor;
-            }
-
-            &--right {
-                border-left: 2px solid $mainColor;
-            }
-
-            &:hover {
-                background-color: $secondaryColor;
-                color: $lightColor
-            }
-        }
-    }
 }
 
 .total {
@@ -207,6 +173,7 @@ ul {
         background-color: $secondaryColor;
         border: 2px solid $secondaryColor;
         text-align: center;
+        cursor: pointer;
 
         &:hover {
             background-color: $mainColor;

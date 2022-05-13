@@ -1,7 +1,7 @@
 import { db, auth } from "./app";
 import { onAuthStateChanged } from "firebase/auth";
-import { getFirebaseBag } from "./functions/bag";
-import { currencyFormat } from "./utils";
+import { deleteFromBag, getFirebaseBag } from "./functions/bag";
+import { currencyFormat, deleteMyLocalBag } from "./utils";
 import { addOrder } from "./functions/checkout";
 
 //Call html elements
@@ -9,6 +9,7 @@ const checkoutForm = document.getElementById("checkoutForm");
 const orderSection = document.getElementById("checkoutOrder");
 const checkoutTotal = document.getElementById("checkoutTotal");
 const shippingText = document.getElementById("shippingPrice");
+const popup = document.getElementById("popup");
 
 let bag = [];
 let order = [];
@@ -112,7 +113,14 @@ checkoutForm.addEventListener("submit", async (e) => {
     }
 
     //Add order to firestore database
-    await addOrder(db, orderComplete);
+    await addOrder(db, orderComplete, userLogged.uid);
+
+    //Show popup
+    popup.classList.add('popup--open');
+    //Delete bag from firestore and local storage
+    deleteFromBag(db, userLogged.uid);
+    deleteMyLocalBag();
+
 });
 
 onAuthStateChanged(auth, async (user) => {

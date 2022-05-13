@@ -2,7 +2,7 @@ import { db, auth } from "./app";
 import { onAuthStateChanged } from "firebase/auth";
 import { getSingleProduct } from "./functions/getProduct";
 import { addProductToBag, currencyFormat, getMyLocalBag } from "./utils";
-import { getFirebaseBag } from "./functions/bag";   
+import { createFirebaseBag, getFirebaseBag } from "./functions/bag";   
 
 //Get HTML elements
 const productInfo = document.getElementById("productInfo");
@@ -79,15 +79,15 @@ function renderProduct(product) {
     let counter = 0;
 
     bagBtn.addEventListener("click", async (e) => {
-        const currentProductIsAdded = bag.find(product => product.id === item.id);
+        const currentProductIsAdded = bag.find(productArray => productArray.id === product.id);
 
         const productToAdd = {
-            ...item,
+            ...product,
             counter: (currentProductIsAdded) ? currentProductIsAdded.counter + 1 : 1,
         }
 
         if (currentProductIsAdded) {
-            const indexElement = bag.findIndex(product => product.id === item.id);
+            const indexElement = bag.findIndex(product => product.id === product.id);
             bag[indexElement] = productToAdd;
         } else {
             bag.push(productToAdd);

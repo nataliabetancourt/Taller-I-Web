@@ -186,6 +186,7 @@ ul {
   width: 100%;
   margin: 10px 0 30px 0;
   font-weight: lighter;
+  cursor: pointer;
 }
 
 .checkout__submit:hover {
@@ -257,5 +258,64 @@ ul {
   color: #340C0C;
   margin-top: 3px;
   font-size: 0.9em;
+}
+
+.popup {
+  width: 100%;
+  height: 1100px;
+  background-color: rgba(24, 24, 24, 0.8);
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #340C0C;
+  visibility: hidden;
+}
+
+.popup__popup {
+  background-color: white;
+  width: 30%;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0 30px 30px;
+}
+
+.popup__popup img {
+  width: 20%;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup__popup h2 {
+  margin-bottom: 5px;
+}
+
+.popup__popup a {
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  background-color: #5C302F;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 15px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup--open {
+  visibility: visible;
 }
 /*# sourceMappingURL=checkout.css.map */

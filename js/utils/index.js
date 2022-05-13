@@ -119,6 +119,10 @@ function getMyLocalBag() {
     return myBag ? JSON.parse(myBag) : [];
 }
 
+function deleteMyLocalBag() {
+    window.localStorage.removeItem('bag');
+}
+
 function currencyFormat(price) {
     return new Intl.NumberFormat("en-UK", {
         style: 'currency',
@@ -130,6 +134,7 @@ function currencyFormat(price) {
 export {
     addProductToBag, 
     getMyLocalBag,
+    deleteMyLocalBag,
     currencyFormat,
     colors
 }
