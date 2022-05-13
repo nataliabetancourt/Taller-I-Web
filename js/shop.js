@@ -80,24 +80,23 @@ function renderProduct(item) {
     //Add to bag button
     const addToBagBtn = product.querySelector(".product__bag");
 
-    //Counter for number of times product is added, adding variable to items
-    let counter = 0;
-
     addToBagBtn.addEventListener("click", async (e) => {
         e.preventDefault(); //Avoid allowing the link to change screens
 
-        //Adding to counter every click
-        counter++;
+        const currentProductIsAdded = bag.find(product => product.id === item.id);
 
-        //If its the first time adding the product to cart, add item to array and modify counter
-        if (counter == 1) {
-            item['counter'] = counter;
-            bag.push(item);        
-        //Else, only modify counter
-        } else {
-            item['counter'] = counter;
+        const productToAdd = {
+            ...item,
+            counter: (currentProductIsAdded) ? currentProductIsAdded.counter + 1 : 1,
         }
 
+        if (currentProductIsAdded) {
+            const indexElement = bag.findIndex(product => product.id === item.id);
+            bag[indexElement] = productToAdd;
+        } else {
+            bag.push(productToAdd);
+        }
+ 
         addProductToBag(bag);
 
         if (userLogged) {

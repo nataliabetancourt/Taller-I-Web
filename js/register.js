@@ -1,5 +1,8 @@
 import { db, auth} from "./app";
+import { onAuthStateChanged } from "firebase/auth";
 import { login, createUser, addUserToDatabase } from "./functions/auth";
+import { getMyLocalBag } from "./utils";
+import { createFirebaseBag, getFirebaseBag } from "./functions/bag";
 
 //Call HTML elements
 //Login form
@@ -8,6 +11,8 @@ const signupBtn = document.getElementById("signupBtn");
 //Sign up form
 const signupForm = document.getElementById("signup");
 const loginBtn = document.getElementById("loginBtn");
+
+let bag = [];
 
 //Submit button on login form
 loginForm.addEventListener("submit", e => {
@@ -61,9 +66,6 @@ signupForm.addEventListener("submit", async (e) =>{
   
   alert(`Welcome, ${name}`);
 
-  //Send to home page
-  //window.location.href = "../html/index.html";
-
 })
 
 //Open login form
@@ -75,6 +77,16 @@ loginBtn.addEventListener("click", e =>{
   //Show login form and button
   loginForm.classList.remove('login--hide');
   signupBtn.classList.remove('registration__registration--hide');
-})
+});
 
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+    //Get local storage bag
+    bag = getMyLocalBag();
+    //Add to firestore
+    await createFirebaseBag(db, user.uid, bag);
 
+    //Send to home page
+    window.location.href = "./index.html";
+  } 
+});

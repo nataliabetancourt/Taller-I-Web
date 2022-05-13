@@ -79,22 +79,22 @@ function renderProduct(product) {
     let counter = 0;
 
     bagBtn.addEventListener("click", async (e) => {
-        //Adding to counter every click
-        counter++;
+        const currentProductIsAdded = bag.find(product => product.id === item.id);
 
-        //If its the first time adding the product to cart, add item to array and modify counter
-        if (counter == 1) {
-            product['counter'] = counter;
-            bag.push(product);        
-        //Else, only modify counter
-        } else {
-            product['counter'] = counter;
+        const productToAdd = {
+            ...item,
+            counter: (currentProductIsAdded) ? currentProductIsAdded.counter + 1 : 1,
         }
 
-        //Local storage
+        if (currentProductIsAdded) {
+            const indexElement = bag.findIndex(product => product.id === item.id);
+            bag[indexElement] = productToAdd;
+        } else {
+            bag.push(productToAdd);
+        }
+ 
         addProductToBag(bag);
 
-        //If user is logged, add to firebase
         if (userLogged) {
             await createFirebaseBag(db, userLogged.uid, bag);
         }

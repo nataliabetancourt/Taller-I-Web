@@ -199,4 +199,63 @@ ul {
   width: 45%;
   margin: 30px 30px 30px 20px;
 }
+
+.checkout__totalBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 15px 32px;
+}
+
+.checkout__total {
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #340C0C;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.order {
+  background-color: white;
+  width: 90%;
+  height: 120px;
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.order__img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.order__infosection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  margin: 20px 20px;
+}
+
+.order__name {
+  font-family: "Marcellus", serif;
+  color: #340C0C;
+  font-size: 1.1em;
+}
+
+.order__info {
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #340C0C;
+  margin-top: 3px;
+  font-size: 0.9em;
+}
 /*# sourceMappingURL=checkout.css.map */

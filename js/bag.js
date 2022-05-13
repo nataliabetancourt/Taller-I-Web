@@ -3,8 +3,11 @@ import { onAuthStateChanged } from "firebase/auth";
 import { getFirebaseBag, createFirebaseBag } from "./functions/bag";
 import { currencyFormat, getMyLocalBag, addProductToBag } from "./utils";
 
+//Get HTML elements
 const bagSection = document.getElementById("bagSection");
 const totalSection = document.getElementById("totalSection");
+const checkoutBtn = document.getElementById("checkoutBtn");
+
 let bag = [];
 let userLogged = undefined;
 
@@ -47,6 +50,10 @@ function renderProduct(product) {
 
     bagSection.appendChild(bagProduct);
 
+    const bagBtn = bagProduct.querySelector(".bag__quantitybtn--right");
+
+
+
     //Delete button
     bagProduct.addEventListener("click", e => {
         console.log(e.target.id);
@@ -55,15 +62,20 @@ function renderProduct(product) {
             console.log("go");
             removeProduct(product.id);
         }
-
-        //PREGUNTAR COMO HACERLO
-        //Add product
-        if (e.target.id === "add") {
-            console.log("add");
-        }
     }); 
-
 }
+
+checkoutBtn.addEventListener("click", e => {
+    e.preventDefault();
+    
+    //Check if a user is logged before switching pages
+    if (userLogged == undefined) {
+        alert("Login to continue to checkout");
+    } else {
+        //If logged in, go to checkout
+        window.location.href = "./checkout.html";
+    }
+});
 
 onAuthStateChanged(auth, async (user) => {
     if (user) {

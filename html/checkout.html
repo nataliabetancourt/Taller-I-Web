@@ -42,27 +42,27 @@
                 <div class="checkout__names">
                     <div class="checkout__subcolumn">
                         <label for="firstname" class="checkout__label">FIRST NAME</label>
-                        <input type="text" id="firstname" name="firstname" class="checkout__input checkout__input--column" placeholder="First name">
+                        <input type="text" id="firstname" name="firstname" class="checkout__input checkout__input--column" placeholder="First name" required>
                     </div>
     
                     <div class="checkout__subcolumn">
                         <label for="lastname" class="checkout__label">LAST NAME</label>
-                        <input type="text" id="lastname" name="lastname" class="checkout__input checkout__input--column" placeholder="Last name">
+                        <input type="text" id="lastname" name="lastname" class="checkout__input checkout__input--column" placeholder="Last name" required>
                     </div>
                 </div>
     
                 <label for="address" class="checkout__label">ADDRESS</label>
-                <input type="text" id="address" name="address" class="checkout__input" placeholder="Address">
+                <input type="text" id="address" name="address" class="checkout__input" placeholder="Address" required>
     
                 <label for="city" class="checkout__label">CITY</label>
-                <input type="text" id="city" name="city" class="checkout__input" placeholder="City">
+                <input type="text" id="city" name="city" class="checkout__input" placeholder="City" required>
     
                 <label for="cell" class="checkout__label">CELLPHONE NUMBER</label>
-                <input type="text" name="cell" placeholder="Cellphone number" id="cell" class="checkout__input">
+                <input type="text" name="cell" placeholder="Cellphone number" id="cell" class="checkout__input" required>
     
                 <h4 class="checkout__subtitle checkout__subtitle--after">SHIPPING INFORMATION</h4>
                 <p class="checkout__paragraph">Note: deliveries to PO Boxes in Continental U.K. ship by Standard method and may take up to 8 business days. For more information on shipping times, please refer to our shipping policies.</p>
-                <select name="shipping" id="shipping" class="checkout__input">
+                <select name="shipping" id="shipping" class="checkout__input" required>
                     <option hidden disabled selected value>Select an option... </option>
                     <option value="standard">Standard (3 - 5 Buisness Days)</option>
                     <option value="expedited">Expedited (Up to 2 Buisness Days)</option>
@@ -72,16 +72,16 @@
     
                 <h4 class="checkout__subtitle checkout__subtitle--after">PAYMENT INFORMATION</h4>
                 <label for="card" class="checkout__label">CARD NUMBER</label>
-                <input type="number" id="card" name="card" class="checkout__input" placeholder="Card number">
+                <input type="number" id="card" name="card" class="checkout__input" placeholder="Card number" required>
                 <div class="checkout__names">
                     <div class="checkout__subcolumn">
                         <label for="expiration" class="checkout__label">EXPIRATION DATE</label>
-                        <input type="date" id="expiration" name="expiration" class="checkout__input checkout__input--column">
+                        <input type="month" id="expiration" name="expiration" class="checkout__input checkout__input--column" required>
                     </div>
     
                     <div class="checkout__subcolumn">
-                        <label for="lastname" class="checkout__label">SECURITY CODE</label>
-                        <input type="text" id="lastname" name="lastname" class="checkout__input checkout__input--column" placeholder="Security code">
+                        <label for="code" class="checkout__label">SECURITY CODE</label>
+                        <input type="number" id="code" name="code" class="checkout__input checkout__input--column" placeholder="Security code" required>
                     </div>
                 </div>
     
@@ -89,8 +89,12 @@
             </form>
         </div>
 
-        <div class="checkout__order">
+        <div class="checkout__order" id="checkoutOrder">
             <h4 class="checkout__title checkout__title--order">Order</h4>
+            <div class="checkout__totalBox">
+                <h5 class="checkout__total">Total: </h5>
+                <h5 class="checkout__total" id="checkoutTotal"></h5>
+            </div>
         </div>
     </section>
     <script src="../js/checkout.js" type="module"></script>
