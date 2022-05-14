@@ -151,6 +151,7 @@ ul {
   height: 30px;
   background: transparent;
   border: none;
+  cursor: pointer;
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
   color: #340C0C;
