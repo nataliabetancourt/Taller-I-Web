@@ -1,0 +1,48 @@
+@media all and (max-width: 1180px) {
+    /*Header section*/
+    .list {
+        display: none;
+    }
+
+    .icons__item--menu {
+        display: inline;
+        height: 18px;
+    }
+
+    .checkout {
+        margin-left: 30px;
+    }
+
+    .order {
+        &__name {
+            font-size: 0.9em;
+        }
+    }
+}
+
+@media all and (max-width: 420px) {
+    /*Header section*/
+    .icons__item {
+        display: none;
+
+        &--menu {
+            display: block;
+        }
+    }
+
+    .checkout {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        top: 90px;
+
+        &__checkout {
+            width: 90%;
+        }
+
+        &__order {
+            width: 90%;
+            margin-left: 0px;
+        }
+    }
+}
