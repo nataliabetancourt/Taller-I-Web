@@ -1,7 +1,9 @@
+import {auth} from "./app";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+
 const slider = document.getElementById("shadeSlider");
 const foundation = document.getElementById("foundation");
 const model = document.getElementById("model");
-const signOutBtn = document.getElementById("signOutBtn");
 const profileBtn = document.getElementById("profileBtn");
 
 slider.addEventListener("change", e =>{
@@ -43,4 +45,22 @@ slider.addEventListener("change", e =>{
         model.src = 'https://firebasestorage.googleapis.com/v0/b/web-charlotte-shop.appspot.com/o/images%2Fmodel7.jpg?alt=media&token=cb9543c2-5411-4b97-a11d-026e862e4178';
     }
 
+});
+
+profileBtn.addEventListener("click", e=> {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            //Sign out if clicked with user logged in 
+            signOut(auth).then(() => {
+                //Open home page
+                window.location.href = "./index.html";
+                alert("Signed out successfully");
+
+            }).catch ((error) => {
+                console.log(error);
+            });
+        } else {
+            window.location.href = "./register.html";
+        }
+    });
 });
