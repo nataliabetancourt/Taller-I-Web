@@ -1,0 +1,105 @@
+@media all and (max-width: 1180px) {
+  /*Header section*/
+  .list {
+    display: none;
+  }
+  .icons__item--menu {
+    display: inline;
+    height: 18px;
+  }
+  .product {
+    top: 250px;
+  }
+  .product__block {
+    height: 850;
+    bottom: -150px;
+  }
+  .product__name {
+    font-size: 1.7em;
+  }
+  .product__info {
+    width: 60%;
+  }
+  .product__bag {
+    width: 80%;
+  }
+  .product__assets {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  .product__main {
+    margin: 0 0 40px 60px;
+  }
+  .product__gallery {
+    width: 80%;
+    margin-left: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0 0 40px 60px;
+  }
+}
+
+@media all and (max-width: 420px) {
+  /*Header section*/
+  .icons__item {
+    display: none;
+  }
+  .icons__item--menu {
+    display: block;
+  }
+  .product {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    top: 20px;
+    margin-left: 30px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .product__block {
+    left: -30px;
+    bottom: 0;
+    width: 120%;
+    height: 440px;
+  }
+  .product__bag {
+    width: 100%;
+  }
+  .product__info {
+    width: 100%;
+  }
+  .product__description {
+    width: 100%;
+  }
+  .product__main {
+    margin: 30px 40px;
+    height: 300px;
+  }
+  .product__gallery {
+    width: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-left: 10px;
+  }
+}
+/*# sourceMappingURL=product-mediaqueries.css.map */
