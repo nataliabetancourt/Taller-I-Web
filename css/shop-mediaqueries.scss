@@ -1,0 +1,77 @@
+@media all and (max-width: 1180px) {
+    /*Header section*/
+    .list {
+        display: none;
+    }
+
+    .icons__item--menu {
+        display: inline;
+        height: 18px;
+    }
+
+    .filter {
+        margin-left: 25px;
+
+        &__label {
+            font-size: 0.9em;
+        }
+    }
+
+    .products {
+        margin-left: 20px;
+    }
+
+    .product {
+        min-height: 300px;
+
+        &__name {
+            font-size: 1em;
+        }
+
+        &__img {
+            height: 250px;
+        }
+    }
+}
+
+/*Cellphone*/
+@media all and (max-width: 420px) {
+    /*Header section*/
+    .icons__item {
+        display: none;
+
+        &--menu {
+            display: block;
+        }
+    }
+
+    .filter {
+        margin-left: 20px;
+
+        &__column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__label {
+            margin-top: 10px;
+        }
+
+        &__select {
+            width: 80%;
+            margin-top: 5px;
+        }
+    }
+
+    .products {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 20px;
+    }
+
+    .product {
+        width: 100%;
+    }
+}

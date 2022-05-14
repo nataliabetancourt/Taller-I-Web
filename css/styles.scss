@@ -37,6 +37,13 @@ ul {
     font-weight: normal;
 }
 
+@mixin item {
+    width: fit-content;
+    height: 25px;
+    margin-right: 30px;
+    object-fit: cover;
+}
+
 .flex {
     display: flex;
 }
@@ -79,19 +86,20 @@ ul {
     height: 25px;
 }
 
-.icons__item {
-    width: fit-content;
-    height: 25px;
-    margin-right: 30px;
-    object-fit: cover;
+.icons {
+    align-items: center;
 
-    &:hover {
-        transform: scale(1.2);
-    }
+    &__item {
+        @include item();
 
-    &--menu {
-        display: none;
-    }
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        &--menu {
+            display: none;
+        }
+    } 
 }
 
 @keyframes slideshow {

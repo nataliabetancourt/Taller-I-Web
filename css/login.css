@@ -149,6 +149,7 @@ ul {
   width: 35%;
   margin-top: 10px;
   font-weight: lighter;
+  cursor: pointer;
 }
 
 .registration__submit:hover {

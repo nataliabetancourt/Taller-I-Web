@@ -70,6 +70,12 @@ ul {
   height: 25px;
 }
 
+.icons {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .icons__item {
   width: -webkit-fit-content;
   width: -moz-fit-content;
