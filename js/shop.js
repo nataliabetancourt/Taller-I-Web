@@ -145,8 +145,6 @@ function filterBy() {
         //Filter for category
         filteredProducts = products.filter((product) => product.category === newCategory);
 
-        //Filter for color
-        filteredProducts = products.filter((product) => product.color.hex === colorFilter.value);
     } else {
         filteredProducts = products;
     }
@@ -200,7 +198,8 @@ stockFilter.addEventListener("change", e => {
 });
 
 colorFilter.addEventListener("change", e => {
-    filterBy();
+    filteredProducts = products.filter((product) => product.color.hex === colorFilter.value);
+    renderArray(filteredProducts);
 });
 
 orderPriceFilter.addEventListener("change", e => {
