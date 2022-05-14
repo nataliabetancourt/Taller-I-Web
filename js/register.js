@@ -64,7 +64,7 @@ signupForm.addEventListener("submit", async (e) =>{
   //Add additional user info to database
   await addUserToDatabase(db, newUser.uid, userInfo);
   
-  alert(`Welcome, ${name}`);
+  alert("Welcome back!");
 
 })
 
