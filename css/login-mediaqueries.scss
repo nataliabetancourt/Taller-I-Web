@@ -1,0 +1,65 @@
+@media all and (max-width: 1180px) {
+    /*Header section*/
+    .list {
+        display: none;
+    }
+
+    .icons__item--menu {
+        display: inline;
+        height: 18px;
+    }
+
+    .registration {
+        
+        &__input {
+            width: 90%;
+        }
+
+        &__submit {
+            width: 90%;
+        }
+
+        &__background {
+            display: none;
+        }
+
+        &__decor {
+            position: absolute;
+            top: -90px;
+            right: 0;
+            height: 280px;
+        }
+    }
+}
+
+@media all and (max-width: 420px) {
+    /*Header section*/
+    .icons__item {
+        display: none;
+
+        &--menu {
+            display: block;
+        }
+    }
+
+    .registration {
+        margin-left: 25px;
+        
+        &__input {
+            z-index: 5;
+            width: 90%;
+        }
+
+        &__submit {
+            width: 90%;
+        }
+
+        &__decor {
+            position: absolute;
+            top: -90px;
+            right: 0;
+            height: 280px;
+            z-index: -1;
+        }
+    }
+}
