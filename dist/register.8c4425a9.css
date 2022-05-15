@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #fff3ec;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.header {
+  z-index: 10;
+  width: 100%;
+  background-image: linear-gradient(#340c0c, #5c302f);
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+}
+
+.menu {
+  justify-content: space-between;
+}
+
+.list {
+  list-style: none;
+}
+
+.list__item {
+  color: #fff3ec;
+  color: #fff3ec;
+  text-align: center;
+  margin-top: 3px;
+  margin-left: 40px;
+  font-family: Outfit, sans-serif;
+  font-weight: lighter;
+}
+
+.list__item:hover {
+  cursor: pointer;
+  color: #eec9af;
+  font-weight: normal;
+  transform: scale(1.1);
+}
+
+#logo {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 25px;
+}
+
+.icons__item {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 25px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-right: 30px;
+}
+
+.icons__item:hover {
+  transform: scale(1.2);
+}
+
+.icons__item--menu {
+  display: none;
+}
+
+.registration {
+  margin-left: 50px;
+  position: relative;
+  top: 150px;
+}
+
+.registration__title {
+  color: #340c0c;
+  margin-bottom: 40px;
+  font-family: Marcellus, serif;
+  font-size: 1.8em;
+}
+
+.registration__label {
+  color: #340c0c;
+  font-family: Outfit, sans-serif;
+  font-weight: normal;
+}
+
+.registration__input {
+  color: #340c0c;
+  width: 35%;
+  height: 40px;
+  border: 2px solid #340c0c;
+  margin-top: 5px;
+  margin-bottom: 18px;
+  padding: 5px;
+  font-family: Outfit, sans-serif;
+  font-size: 1em;
+  font-weight: lighter;
+  display: block;
+}
+
+.registration__registration {
+  color: #5c302f;
+  background-color: #0000;
+  border: none;
+  margin: 15px 0;
+  font-family: Outfit, sans-serif;
+  font-size: 1em;
+  font-weight: lighter;
+  text-decoration: underline;
+  display: block;
+}
+
+.registration__registration--hide {
+  display: none;
+}
+
+.registration__submit {
+  color: #eec9af;
+  width: 35%;
+  cursor: pointer;
+  background-color: #5c302f;
+  border: 2px solid #5c302f;
+  margin-top: 10px;
+  padding: 10px 40px;
+  font-family: Outfit, sans-serif;
+  font-weight: lighter;
+}
+
+.registration__submit:hover {
+  background-color: #340c0c;
+  border: 2px solid #340c0c;
+  font-weight: normal;
+}
+
+.registration__background {
+  width: 58%;
+  position: absolute;
+  top: -100px;
+  right: 0;
+}
+
+.registration__decor {
+  height: 300px;
+  position: absolute;
+  top: -90px;
+  right: 56%;
+}
+
+.signup {
+  display: none;
+}
+
+.signup--show, .login {
+  display: block;
+}
+
+.login--hide {
+  display: none;
+}
+
+/*# sourceMappingURL=register.8c4425a9.css.map */
