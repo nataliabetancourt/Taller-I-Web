@@ -16,6 +16,7 @@ let order = [];
 let userLogged = undefined;
 let shippingPrice = 0;
 let total = 0;
+let finalTotal = 0;
 
 function loadBag(bag) {
     bag.forEach(product => {
@@ -52,7 +53,7 @@ function renderProduct(product) {
 }
 
 checkoutForm.addEventListener("change", e => {
-    let finalTotal = total;
+    finalTotal = total;
 
     if (checkoutForm.shipping.value == "standard") {
         shippingPrice = 6;
