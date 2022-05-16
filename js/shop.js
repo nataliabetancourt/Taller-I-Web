@@ -16,6 +16,7 @@ const orderNameFilter = document.getElementById("name");
 
 let products = [];
 let bag = [];
+let filteredProducts = [];
 let userLogged = undefined;
 let stars = undefined;
 
@@ -134,8 +135,6 @@ function filterBy() {
     const newPriceOrder = orderPriceFilter.value;
     const newRatingsOrder = orderRatingsFilter.value;
     const newAlphaOrder = orderNameFilter.value;
-
-    let filteredProducts = [];
 
     //Check if selected category option has a value
     if (newCategory !== "") {
