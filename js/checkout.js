@@ -52,7 +52,7 @@ function renderProduct(product) {
 }
 
 checkoutForm.addEventListener("change", e => {
-    finalTotal = total;
+    let finalTotal = total;
 
     if (checkoutForm.shipping.value == "standard") {
         shippingPrice = 6;
