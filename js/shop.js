@@ -19,9 +19,6 @@ let bag = [];
 let userLogged = undefined;
 let stars = undefined;
 
-//Start empty array for product colors 
-filteredColor = [];
-
 async function loadProducts() {
     //Get products from database
     const firebaseProducts = await getAllProducts(db);
