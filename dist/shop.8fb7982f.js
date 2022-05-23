@@ -542,10 +542,9 @@ const orderRatingsFilter = document.getElementById("rating");
 const orderNameFilter = document.getElementById("name");
 let products = [];
 let bag = [];
+let filteredProducts = [];
 let userLogged = undefined;
 let stars = undefined;
-//Start empty array for product colors 
-filteredColor = [];
 async function loadProducts() {
     //Get products from database
     const firebaseProducts = await _getProduct.getAllProducts(_app.db);
@@ -632,7 +631,6 @@ function filterBy() {
     const newPriceOrder = orderPriceFilter.value;
     const newRatingsOrder = orderRatingsFilter.value;
     const newAlphaOrder = orderNameFilter.value;
-    let filteredProducts = [];
     //Check if selected category option has a value
     if (newCategory !== "") //Filter for category
     filteredProducts = products.filter((product)=>product.category === newCategory

@@ -1,0 +1,115 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF3EC;
+}
+
+ul {
+  list-style: none;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#340C0C), to(#5C302F));
+  background-image: linear-gradient(#340C0C, #5C302F);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 20px;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+
+.menu {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.list {
+  list-style: none;
+}
+
+.list__item {
+  margin-top: 3px;
+  margin-left: 40px;
+  color: #FFF3EC;
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #FFF3EC;
+  text-align: center;
+}
+
+.list__item:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  font-weight: normal;
+  cursor: pointer;
+  color: #EEC9AF;
+}
+
+#logo {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 25px;
+}
+
+.icons {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icons__item {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 25px;
+  margin-right: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.icons__item:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.icons__item--menu {
+  display: none;
+}
+
+section {
+  position: relative;
+  top: 140px;
+  margin-left: 50px;
+}
+
+section .text {
+  font-family: "Marcellus", serif;
+  color: #340C0C;
+  font-size: 3em;
+  -webkit-box-reflect: below -0.5em linear-gradient(transparent, #0004);
+}
+
+section span {
+  position: relative;
+  display: inline-block;
+}
+/*# sourceMappingURL=lips.css.map */

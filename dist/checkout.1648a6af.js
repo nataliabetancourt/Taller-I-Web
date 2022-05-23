@@ -542,6 +542,7 @@ let order = [];
 let userLogged = undefined;
 let shippingPrice = 0;
 let total = 0;
+let finalTotal = 0;
 function loadBag(bag1) {
     bag1.forEach((product)=>{
         const { name , price  } = product;
