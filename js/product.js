@@ -10,6 +10,7 @@ const productAssets = document.getElementById("productAssets");
 
 let userLogged = undefined;
 let bag = [];
+let stars;
 
 function getParam(param) {
     const url = window.location.search;
