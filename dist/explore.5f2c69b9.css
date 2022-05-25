@@ -5,8 +5,71 @@
 }
 
 a {
-  color: #5c302f;
+  color: #fff3ec;
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.header {
+  z-index: 10;
+  width: 100%;
+  background-image: linear-gradient(#340c0c, #5c302f);
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+}
+
+.menu {
+  justify-content: space-between;
+}
+
+.list {
+  list-style: none;
+}
+
+.list__item {
+  color: #fff3ec;
+  color: #fff3ec;
+  text-align: center;
+  margin-top: 3px;
+  margin-left: 40px;
+  font-family: Outfit, sans-serif;
+  font-weight: lighter;
+}
+
+.list__item:hover {
+  cursor: pointer;
+  color: #eec9af;
+  font-weight: normal;
+  transform: scale(1.1);
+}
+
+#logo {
+  width: fit-content;
+  height: 25px;
+}
+
+.icons__item {
+  width: fit-content;
+  height: 25px;
+  object-fit: cover;
+  margin-right: 30px;
+}
+
+.icons__item:hover {
+  transform: scale(1.2);
+}
+
+.icons__item--menu {
+  display: none;
 }
 
 .slider {
@@ -33,7 +96,9 @@ a {
 }
 
 .slider__nav .next {
-  background-image: url("data:image/svg+xml,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M 19 8 L 19 11 L 1 11 L 1 13 L 19 13 L 19 16 L 23 12 L 19 8 z' fill='white'/%3E%3C/svg%3E");
+  width: 3.5%;
+  height: 5.7%;
+  background-image: url("arrow 1.99f69bfb.png");
   right: 50px;
 }
 
@@ -42,7 +107,9 @@ a {
 }
 
 .slider__nav .prev {
-  background-image: url("data:image/svg+xml,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M 5 8 L 1 12 L 5 16 L 5 13 L 23 13 L 23 11 L 5 11 L 5 8 z' fill='white'/%3E%3C/svg%3E");
+  width: 3.5%;
+  height: 5.7%;
+  background-image: url("arrow 2.76863bc9.png");
   left: 50px;
 }
 
@@ -61,8 +128,8 @@ a {
   padding: 20px;
   transition: background-color .3s;
   position: absolute;
-  bottom: 2rem;
-  left: calc(50% - 4rem);
+  bottom: 10%;
+  left: 43%;
 }
 
 .slider__nav .gotoBtn:hover {
@@ -115,12 +182,11 @@ a {
   height: 100%;
   grid-column-gap: 32px;
   grid-row-gap: 32px;
-  grid-template-rows: repeat(12, 1fr);
-  grid-template-columns: repeat(12, 1fr);
   display: grid;
   position: absolute;
   top: 0;
   left: 0;
+  transform: rotate(-20deg);
 }
 
 .category__imgs__grid__img {

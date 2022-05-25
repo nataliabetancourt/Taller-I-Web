@@ -1,12 +1,4 @@
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 $mainColor: #340C0C;
 $lightColor: #FFF3EC;
 $secondaryColor: #5C302F;
@@ -14,6 +6,29 @@ $accentColor: #EEC9AF;
 $sansFont: 'Outfit', sans-serif;
 $serifFont: 'Marcellus', serif;
 
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin sansStyle($theme: $mainColor) {
+    font-family: $sansFont;
+    font-weight: lighter;
+    color: $theme;
+}
+
+@mixin serifStyle($theme: $mainColor) {
+    font-family: $serifFont;
+    color: $theme;
+}
 
 @mixin buttons {
     width: 2%;
@@ -26,11 +41,73 @@ $serifFont: 'Marcellus', serif;
 }
 
 a {
-  color: $secondaryColor;
-  text-decoration: none;
+    text-decoration: none;
+    color: $lightColor;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.header {
+    background-image: linear-gradient($mainColor, $secondaryColor);
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+}
+
+.menu {
+    justify-content: space-between;
+}
+
+.list {
+    list-style: none;
+
+    &__item {
+        margin-top: 3px;
+        margin-left: 40px;
+        color: #FFF3EC;
+        @include sansStyle($theme: $lightColor);
+        text-align: center;
+
+        &:hover {
+            transform: scale(1.1);
+            font-weight: normal;
+            cursor: pointer;
+            color: $accentColor;
+        }
+    }
+}
+
+#logo {
+    width: fit-content;
+    height: 25px;
+}
+
+.icons__item {
+    width: fit-content;
+    height: 25px;
+    margin-right: 30px;
+    object-fit: cover;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &--menu {
+        display: none;
+    }
 }
 
 .slider {
+  
   height: 700px;
   width: 100%;
   background-color: $mainColor;
@@ -52,7 +129,9 @@ a {
 
     .next {
       right: 50px;
-      background-image: url("data:image/svg+xml,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M 19 8 L 19 11 L 1 11 L 1 13 L 19 13 L 19 16 L 23 12 L 19 8 z' fill='white'/%3E%3C/svg%3E");
+      width: 3.5%;
+      height: 5.7%;
+      background-image: url("../images/arrow 1.png");
       &:hover {
         transform: translateX(0.5rem);
       }
@@ -60,7 +139,9 @@ a {
 
     .prev {
       left: 50px;
-      background-image: url("data:image/svg+xml,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M 5 8 L 1 12 L 5 16 L 5 13 L 23 13 L 23 11 L 5 11 L 5 8 z' fill='white'/%3E%3C/svg%3E");
+      width: 3.5%;
+      height: 5.7%;
+      background-image: url("../images/arrow 2.png");
 
       &:hover {
         transform: translateX(-0.5rem);
@@ -70,8 +151,8 @@ a {
     .gotoBtn {
       z-index: 4;
       position: absolute;
-      bottom: 2rem;
-      left: calc(50% - 4rem);
+      bottom: 10%;
+      left: 43%;
       width: 15%;
       text-align: center;
       padding: 20px;
@@ -123,6 +204,7 @@ a {
     }
 
     &__imgs{
+        
         position: absolute;
         width: 60%;
         padding-top: 60%;
@@ -134,10 +216,9 @@ a {
             width: 100%;
             height: 100%;
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: repeat(12, 1fr);
             grid-column-gap: 32px;
             grid-row-gap: 32px;
+            transform: rotate(-20deg);
 
             &__img {
                 width: 100%;

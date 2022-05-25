@@ -529,7 +529,7 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _animeEsJs = require("animejs/lib/anime.es.js");
 var _animeEsJsDefault = parcelHelpers.interopDefault(_animeEsJs);
-//initialice init when DOM is completely loaded
+//initialize init when DOM is completely loaded
 document.addEventListener("DOMContentLoaded", init);
 function init() {
     const slider = document.querySelector(".slider");
@@ -574,10 +574,6 @@ function init() {
             targets: currentImgs[0],
             translateY: -600,
             translateZ: 0,
-            rotate: [
-                0,
-                '-15deg'
-            ],
             opacity: [
                 1,
                 0
@@ -587,10 +583,6 @@ function init() {
             targets: currentImgs[1],
             translateY: -600,
             translateZ: 0,
-            rotate: [
-                0,
-                '15deg'
-            ],
             opacity: [
                 1,
                 0
@@ -600,10 +592,6 @@ function init() {
             targets: currentImgs[2],
             translateY: -600,
             translateZ: 0,
-            rotate: [
-                0,
-                '-15deg'
-            ],
             opacity: [
                 1,
                 0
@@ -613,10 +601,6 @@ function init() {
             targets: currentImgs[3],
             translateY: -600,
             translateZ: 0,
-            rotate: [
-                0,
-                '15deg'
-            ],
             opacity: [
                 1,
                 0
@@ -640,10 +624,6 @@ function init() {
                 0
             ],
             translateZ: 0,
-            rotate: [
-                '15deg',
-                0
-            ],
             opacity: [
                 0,
                 1
@@ -656,10 +636,6 @@ function init() {
                 0
             ],
             translateZ: 0,
-            rotate: [
-                '-15deg',
-                0
-            ],
             opacity: [
                 0,
                 1
@@ -672,10 +648,6 @@ function init() {
                 0
             ],
             translateZ: 0,
-            rotate: [
-                '15deg',
-                0
-            ],
             opacity: [
                 0,
                 1
@@ -688,10 +660,6 @@ function init() {
                 0
             ],
             translateZ: 0,
-            rotate: [
-                '-15deg',
-                0
-            ],
             opacity: [
                 0,
                 1

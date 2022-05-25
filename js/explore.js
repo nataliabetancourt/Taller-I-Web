@@ -1,6 +1,6 @@
 import anime from 'animejs/lib/anime.es.js';
 
-//initialice init when DOM is completely loaded
+//initialize init when DOM is completely loaded
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
@@ -38,7 +38,7 @@ function init() {
         duration: t,
         complete: callback
       });
-  
+
       tl.add({
         targets: currentText,
         translateY: [0, '-.75em'],
@@ -52,7 +52,6 @@ function init() {
             targets: currentImgs[0],
             translateY: -600,
             translateZ: 0,
-            rotate: [0, '-15deg'],
             opacity: [1, 0],
             easing: "easeInCubic"
           },
@@ -63,7 +62,6 @@ function init() {
             targets: currentImgs[1],
             translateY: -600,
             translateZ: 0,
-            rotate: [0, '15deg'],
             opacity: [1, 0],
             easing: "easeInCubic"
           },
@@ -74,7 +72,6 @@ function init() {
             targets: currentImgs[2],
             translateY: -600,
             translateZ: 0,
-            rotate: [0, '-15deg'],
             opacity: [1, 0],
             easing: "easeInCubic"
           },
@@ -85,7 +82,6 @@ function init() {
             targets: currentImgs[3],
             translateY: -600,
             translateZ: 0,
-            rotate: [0, '15deg'],
             opacity: [1, 0],
             easing: "easeInCubic"
           },
@@ -112,7 +108,6 @@ function init() {
             targets: nextImgs[0],
             translateY: [600, 0],
             translateZ: 0,
-            rotate: ['15deg', 0],
             opacity: [0, 1],
             easing: "easeOutCubic"
           },
@@ -123,7 +118,6 @@ function init() {
             targets: nextImgs[1],
             translateY: [600, 0],
             translateZ: 0,
-            rotate: ['-15deg', 0],
             opacity: [0, 1],
             easing: "easeOutCubic"
           },
@@ -134,7 +128,6 @@ function init() {
             targets: nextImgs[2],
             translateY: [600, 0],
             translateZ: 0,
-            rotate: ['15deg', 0],
             opacity: [0, 1],
             easing: "easeOutCubic"
           },
@@ -145,7 +138,6 @@ function init() {
             targets: nextImgs[3],
             translateY: [600, 0],
             translateZ: 0,
-            rotate: ['-15deg', 0],
             opacity: [0, 1],
             easing: "easeOutCubic"
           },
