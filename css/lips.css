@@ -97,7 +97,7 @@ ul {
 
 section {
   position: relative;
-  top: 210px;
+  top: 150px;
   margin-left: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,6 +113,7 @@ section .text {
   color: #340C0C;
   font-size: 3em;
   -webkit-box-reflect: below -0.5em linear-gradient(transparent, #0002);
+  margin-top: 50px;
 }
 
 section .text__paragraph {
@@ -163,6 +164,7 @@ section a:hover {
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
   position: relative;
+  height: 600px;
 }
 
 .images__1 {
@@ -174,7 +176,60 @@ section a:hover {
 .images__2 {
   position: absolute;
   top: -60px;
-  left: -50;
+  left: -70;
   height: 230px;
+  z-index: 2;
+}
+
+.images__3 {
+  position: absolute;
+  top: 300px;
+  left: -70;
+  height: 230px;
+  z-index: 2;
+}
+
+.images__4 {
+  position: absolute;
+  height: 500px;
+  left: 100px;
+}
+
+.images__5 {
+  position: absolute;
+  top: -60px;
+  left: -70;
+  height: 230px;
+  z-index: 2;
+}
+
+.images__6 {
+  position: absolute;
+  top: 300px;
+  left: -70;
+  height: 230px;
+  z-index: 2;
+}
+
+.images__7 {
+  position: absolute;
+  height: 500px;
+  left: 100px;
+}
+
+.images__8 {
+  position: absolute;
+  top: -60px;
+  left: -70;
+  height: 230px;
+  z-index: 2;
+}
+
+.images__9 {
+  position: absolute;
+  top: 300px;
+  left: -70;
+  height: 230px;
+  z-index: 2;
 }
 /*# sourceMappingURL=lips.css.map */

@@ -1521,7 +1521,7 @@ class HeartbeatStorageImpl {
  * @packageDocumentation
  */ registerCoreComponents('');
 
-},{"@firebase/component":"bi1VB","@firebase/logger":"fZmft","@firebase/util":"ePiK6","idb":"kozAz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bi1VB":[function(require,module,exports) {
+},{"@firebase/component":"bi1VB","@firebase/logger":"fZmft","@firebase/util":"ePiK6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","idb":"kozAz"}],"bi1VB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Component", ()=>Component
@@ -4166,7 +4166,7 @@ var _logger = require("@firebase/logger");
 var _component = require("@firebase/component");
 var _index3B632D0BJs = require("./index-3b632d0b.js");
 
-},{"@firebase/util":"ePiK6","@firebase/app":"3AcPV","tslib":"lRdW5","@firebase/logger":"fZmft","@firebase/component":"bi1VB","./index-3b632d0b.js":"18FdJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lRdW5":[function(require,module,exports) {
+},{"@firebase/util":"ePiK6","@firebase/app":"3AcPV","tslib":"lRdW5","@firebase/logger":"fZmft","@firebase/component":"bi1VB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./index-3b632d0b.js":"18FdJ"}],"lRdW5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "__extends", ()=>__extends

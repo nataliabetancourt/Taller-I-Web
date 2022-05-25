@@ -198,6 +198,3 @@ function init() {
     nextBtn.onclick = next;
     prevBtn.onclick = prev;
   }
-  
-  
-  

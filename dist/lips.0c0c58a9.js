@@ -572,7 +572,7 @@ function imageAnimation() {
             0,
             1
         ]
-    }, '+=500').add({
+    }, '+=400').add({
         targets: '.images__2',
         translateX: [
             600,
@@ -582,7 +582,89 @@ function imageAnimation() {
             0,
             1
         ]
-    }, '+=500');
+    }, '+=200').add({
+        targets: '.images__3',
+        translateX: [
+            600,
+            0
+        ],
+        opacity: [
+            0,
+            1
+        ]
+    }, '+=200').add({
+        targets: '.images__1',
+        opacity: [
+            1,
+            0
+        ]
+    }, '+=1000').add({
+        targets: '.images__4',
+        opacity: [
+            0,
+            1
+        ]
+    }, '+=200').add({
+        targets: '.images__2',
+        opacity: [
+            1,
+            0
+        ]
+    }, '+=1000').add({
+        targets: '.images__5',
+        opacity: [
+            0,
+            1
+        ]
+    }, '+=200').add({
+        targets: '.images__3',
+        opacity: [
+            1,
+            0
+        ]
+    }, '+=1000').add({
+        targets: '.images__6',
+        opacity: [
+            0,
+            1
+        ]
+    }, '+=200').add({
+        targets: '.images__4',
+        opacity: [
+            1,
+            0
+        ]
+    }, '+=1000').add({
+        targets: '.images__7',
+        opacity: [
+            0,
+            1
+        ]
+    }, '+=200').add({
+        targets: '.images__5',
+        opacity: [
+            1,
+            0
+        ]
+    }, '+=1000').add({
+        targets: '.images__8',
+        opacity: [
+            0,
+            1
+        ]
+    }, '+=200').add({
+        targets: '.images__6',
+        opacity: [
+            1,
+            0
+        ]
+    }, '+=1000').add({
+        targets: '.images__9',
+        opacity: [
+            0,
+            1
+        ]
+    }, '+=200');
 }
 titleAnimation();
 imageAnimation();
