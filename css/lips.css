@@ -97,7 +97,7 @@ ul {
 
 section {
   position: relative;
-  top: 210px;
+  top: 150px;
   margin-left: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,6 +113,7 @@ section .text {
   color: #340C0C;
   font-size: 3em;
   -webkit-box-reflect: below -0.5em linear-gradient(transparent, #0002);
+  margin-top: 50px;
 }
 
 section .text__paragraph {
@@ -128,6 +129,32 @@ section span {
   display: inline-block;
 }
 
+section a {
+  display: block;
+  background-color: transparent;
+  border: 2px solid #340C0C;
+  font-weight: normal;
+  width: 30%;
+  line-height: 40px;
+  margin-top: 10px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #340C0C;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+section a:hover {
+  background-color: #5C302F;
+  color: #EEC9AF;
+  font-weight: normal;
+}
+
 .images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -136,11 +163,73 @@ section span {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  position: relative;
+  height: 600px;
 }
 
-.images img {
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+.images__1 {
+  position: absolute;
+  height: 500px;
+  left: 100px;
+}
+
+.images__2 {
+  position: absolute;
+  top: -60px;
+  left: -70;
+  height: 230px;
+  z-index: 2;
+}
+
+.images__3 {
+  position: absolute;
+  top: 300px;
+  left: -70;
+  height: 230px;
+  z-index: 2;
+}
+
+.images__4 {
+  position: absolute;
+  height: 500px;
+  left: 100px;
+}
+
+.images__5 {
+  position: absolute;
+  top: -60px;
+  left: -70;
+  height: 230px;
+  z-index: 2;
+}
+
+.images__6 {
+  position: absolute;
+  top: 300px;
+  left: -70;
+  height: 230px;
+  z-index: 2;
+}
+
+.images__7 {
+  position: absolute;
+  height: 500px;
+  left: 100px;
+}
+
+.images__8 {
+  position: absolute;
+  top: -60px;
+  left: -70;
+  height: 230px;
+  z-index: 2;
+}
+
+.images__9 {
+  position: absolute;
+  top: 300px;
+  left: -70;
+  height: 230px;
+  z-index: 2;
 }
 /*# sourceMappingURL=lips.css.map */

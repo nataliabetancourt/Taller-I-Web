@@ -25,21 +25,73 @@ function titleAnimation() {
 
 function imageAnimation() {
     anime.timeline({
-        loop: true,
+        loop: false,
         easing: 'easeOutExpo',
         duration: 1500
     })
     .add({
-        targets: '.images .img1',
+        targets: '.images__1',
         translateX: [600, 0],
         opacity: [0, 1],
-    }, '+=1000')
-    
+    }, '+=400')
     .add({
-        targets: '.images .img2',
+        targets: '.images__2',
         translateX: [600, 0],
         opacity: [0, 1],
-    }, '+=1000');
+    }, '+=200')
+    .add({
+        targets: '.images__3',
+        translateX: [600, 0],
+        opacity: [0, 1],
+    }, '+=200')
+    .add({
+        targets: '.images__1',
+        opacity: [1, 0],
+    }, '+=1000')
+    .add({
+        targets: '.images__4',
+        opacity: [0, 1],
+    }, '+=200')
+    .add({
+        targets: '.images__2',
+        opacity: [1, 0],
+    }, '+=1000')
+    .add({
+        targets: '.images__5',
+        opacity: [0, 1],
+    }, '+=200')
+    .add({
+        targets: '.images__3',
+        opacity: [1, 0],
+    }, '+=1000')
+    .add({
+        targets: '.images__6',
+        opacity: [0, 1],
+    }, '+=200')
+    .add({
+        targets: '.images__4',
+        opacity: [1, 0],
+    }, '+=1000')
+    .add({
+        targets: '.images__7',
+        opacity: [0, 1],
+    }, '+=200')
+    .add({
+        targets: '.images__5',
+        opacity: [1, 0],
+    }, '+=1000')
+    .add({
+        targets: '.images__8',
+        opacity: [0, 1],
+    }, '+=200')
+    .add({
+        targets: '.images__6',
+        opacity: [1, 0],
+    }, '+=1000')
+    .add({
+        targets: '.images__9',
+        opacity: [0, 1],
+    }, '+=200');    
 }
 
 titleAnimation();

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 $mainColor: #340C0C;
 $lightColor: #FFF3EC;
@@ -12,6 +13,9 @@ $serifFont: 'Marcellus', serif;
     margin: 0;
 }
 
+=======
+*,
+>>>>>>> cb3da56e97f5d0ee247e75018b4fbafa799a855b
 *:before,
 *:after {
   box-sizing: border-box;
@@ -106,9 +110,105 @@ ul {
     }
 }
 
+a {
+  text-decoration: none;
+  color: $lightColor;
+}
+
+ul {
+  list-style: none;
+}
+
+@mixin sansStyle($theme: $mainColor) {
+  font-family: $sansFont;
+  font-weight: lighter;
+  color: $theme;
+}
+
+@mixin serifStyle($theme: $mainColor) {
+  font-family: $serifFont;
+  color: $theme;
+}
+
+@mixin hover () {
+  background-color: $secondaryColor;
+  color: $accentColor;
+  font-weight: normal;
+}
+
+@mixin item {
+  width: fit-content;
+  height: 25px;
+  margin-right: 30px;
+  object-fit: cover;
+}
+
+.flex {
+  display: flex;
+}
+
+.header {
+  background-image: linear-gradient($mainColor, $secondaryColor);
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+
+.menu {
+  justify-content: space-between;
+}
+
+.list {
+  list-style: none;
+
+  &__item {
+      margin-top: 3px;
+      margin-left: 40px;
+      color: #FFF3EC;
+      @include sansStyle($theme: $lightColor);
+      text-align: center;
+
+      &:hover {
+          transform: scale(1.1);
+          font-weight: normal;
+          cursor: pointer;
+          color: $accentColor;
+      }
+  }
+}
+
+#logo {
+  width: fit-content;
+  height: 25px;
+}
+
+.icons {
+  align-items: center;
+
+  &__item {
+      @include item();
+
+      &:hover {
+          transform: scale(1.2);
+      }
+
+      &--menu {
+          display: none;
+      }
+  } 
+}
+
 .slider {
+<<<<<<< HEAD
   
   height: 700px;
+=======
+  top: 60px;
+  height: 680px;
+>>>>>>> cb3da56e97f5d0ee247e75018b4fbafa799a855b
   width: 100%;
   background-color: $mainColor;
   display: flex;
