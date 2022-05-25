@@ -112,15 +112,44 @@ section span {
   position: relative;
 }
 
+section a {
+  width: 30%;
+  text-align: center;
+  color: #340c0c;
+  cursor: pointer;
+  background-color: #0000;
+  border: 2px solid #340c0c;
+  justify-content: flex-end;
+  margin-top: 40px;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+  line-height: 40px;
+  display: block;
+}
+
+section a:hover {
+  color: #eec9af;
+  background-color: #5c302f;
+  font-weight: normal;
+}
+
 .images {
   flex-direction: row-reverse;
   display: flex;
+  position: relative;
 }
 
-.images img {
-  width: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
+.images__1 {
+  height: 500px;
+  position: absolute;
+  left: 100px;
+}
+
+.images__2 {
+  height: 230px;
+  position: absolute;
+  top: -60px;
+  left: -50px;
 }
 
 /*# sourceMappingURL=lips.6062c29c.css.map */

@@ -25,21 +25,21 @@ function titleAnimation() {
 
 function imageAnimation() {
     anime.timeline({
-        loop: true,
+        loop: false,
         easing: 'easeOutExpo',
         duration: 1500
     })
     .add({
-        targets: '.images .img1',
+        targets: '.images__1',
         translateX: [600, 0],
         opacity: [0, 1],
-    }, '+=1000')
+    }, '+=500')
     
     .add({
-        targets: '.images .img2',
+        targets: '.images__2',
         translateX: [600, 0],
         opacity: [0, 1],
-    }, '+=1000');
+    }, '+=500');
 }
 
 titleAnimation();

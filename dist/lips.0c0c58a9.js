@@ -559,11 +559,11 @@ function titleAnimation() {
 }
 function imageAnimation() {
     _animejsDefault.default.timeline({
-        loop: true,
+        loop: false,
         easing: 'easeOutExpo',
         duration: 1500
     }).add({
-        targets: '.images .img1',
+        targets: '.images__1',
         translateX: [
             600,
             0
@@ -572,8 +572,8 @@ function imageAnimation() {
             0,
             1
         ]
-    }, '+=1000').add({
-        targets: '.images .img2',
+    }, '+=500').add({
+        targets: '.images__2',
         translateX: [
             600,
             0
@@ -582,7 +582,7 @@ function imageAnimation() {
             0,
             1
         ]
-    }, '+=1000');
+    }, '+=500');
 }
 titleAnimation();
 imageAnimation();

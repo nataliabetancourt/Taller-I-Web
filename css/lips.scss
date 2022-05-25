@@ -128,14 +128,46 @@ section {
         position: relative;
         display: inline-block;
     }
+
+    & a {
+        display: block;
+        background-color: transparent;
+        border: 2px solid $mainColor;
+        font-weight: normal;
+        width: 30%;
+        line-height: 40px;
+        margin-top: 10px;
+        justify-content: flex-end;
+        text-align: center;
+        @include sansStyle();
+        font-weight: 500;
+        cursor: pointer;
+        margin-top: 40px;
+
+        &:hover {
+            background-color: $secondaryColor;
+            color: $accentColor;
+            font-weight: normal;
+        }
+    }
 }
 
 .images {
     display: flex;
     flex-direction: row-reverse;
-    & img {
-        width: 100%;
-        object-fit: contain;
+    position: relative;
+
+    &__1 {
+        position: absolute;
+        height: 500px;
+        left: 100px;
+    }
+
+    &__2 {
+        position: absolute;
+        top: -60px;
+        left: -50;
+        height: 230px;
     }
 }
   
