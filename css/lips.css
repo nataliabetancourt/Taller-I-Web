@@ -97,19 +97,50 @@ ul {
 
 section {
   position: relative;
-  top: 140px;
+  top: 210px;
   margin-left: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section div {
+  width: 50%;
 }
 
 section .text {
   font-family: "Marcellus", serif;
   color: #340C0C;
   font-size: 3em;
-  -webkit-box-reflect: below -0.5em linear-gradient(transparent, #0004);
+  -webkit-box-reflect: below -0.5em linear-gradient(transparent, #0002);
+}
+
+section .text__paragraph {
+  font-family: "Outfit", sans-serif;
+  font-weight: lighter;
+  color: #340C0C;
+  width: 70%;
+  margin-top: 50px;
 }
 
 section span {
   position: relative;
   display: inline-block;
+}
+
+.images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.images img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 /*# sourceMappingURL=lips.css.map */

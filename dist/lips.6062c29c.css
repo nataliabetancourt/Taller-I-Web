@@ -83,20 +83,44 @@ ul {
 
 section {
   margin-left: 50px;
+  display: flex;
   position: relative;
-  top: 140px;
+  top: 210px;
+}
+
+section div {
+  width: 50%;
 }
 
 section .text {
   color: #340c0c;
-  -webkit-box-reflect: below -.5em linear-gradient(transparent, #0004);
+  -webkit-box-reflect: below -.5em linear-gradient(transparent, #0002);
   font-family: Marcellus, serif;
   font-size: 3em;
+}
+
+section .text__paragraph {
+  color: #340c0c;
+  width: 70%;
+  margin-top: 50px;
+  font-family: Outfit, sans-serif;
+  font-weight: lighter;
 }
 
 section span {
   display: inline-block;
   position: relative;
+}
+
+.images {
+  flex-direction: row-reverse;
+  display: flex;
+}
+
+.images img {
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 /*# sourceMappingURL=lips.6062c29c.css.map */

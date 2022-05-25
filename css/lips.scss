@@ -104,18 +104,38 @@ ul {
 
 section {
     position: relative;
-    top: 140px;
+    top: 210px;
     margin-left: 50px;
+    display: flex;
+
+    & div {
+        width: 50%;
+    }
 
     .text {
         @include serifStyle();
         font-size: 3em;
-        -webkit-box-reflect: below -0.5em linear-gradient(transparent,#0004);
+        -webkit-box-reflect: below -0.5em linear-gradient(transparent,#0002);
+
+        &__paragraph {
+            @include sansStyle();
+            width: 70%;
+            margin-top: 50px;
+        }
     }
 
     & span {
         position: relative;
         display: inline-block;
+    }
+}
+
+.images {
+    display: flex;
+    flex-direction: row-reverse;
+    & img {
+        width: 100%;
+        object-fit: contain;
     }
 }
   

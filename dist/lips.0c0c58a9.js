@@ -531,29 +531,61 @@ var _animejs = require("animejs");
 var _animejsDefault = parcelHelpers.interopDefault(_animejs);
 //Getting HTML elements
 const text = document.querySelector('.text');
+const images = document.querySelector('.images');
 //Splitting text for animation 
 text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
-//Apply animation
-_animejsDefault.default.timeline({
-    loop: false
-}).add({
-    targets: '.text span',
-    translateY: [
-        -600,
-        0
-    ],
-    scale: [
-        10,
-        1
-    ],
-    opacity: [
-        0,
-        1
-    ],
-    easing: "easeOutExpo",
-    duration: 1500,
-    delay: _animejsDefault.default.stagger(100)
-});
+function titleAnimation() {
+    //Apply animation
+    _animejsDefault.default.timeline({
+        loop: false
+    }).add({
+        targets: '.text span',
+        translateY: [
+            -600,
+            0
+        ],
+        scale: [
+            10,
+            1
+        ],
+        opacity: [
+            0,
+            1
+        ],
+        easing: "easeOutExpo",
+        duration: 1500,
+        delay: _animejsDefault.default.stagger(100)
+    });
+}
+function imageAnimation() {
+    _animejsDefault.default.timeline({
+        loop: true,
+        easing: 'easeOutExpo',
+        duration: 1500
+    }).add({
+        targets: '.images .img1',
+        translateX: [
+            600,
+            0
+        ],
+        opacity: [
+            0,
+            1
+        ]
+    }, '+=1000').add({
+        targets: '.images .img2',
+        translateX: [
+            600,
+            0
+        ],
+        opacity: [
+            0,
+            1
+        ]
+    }, '+=1000');
+}
+titleAnimation();
+imageAnimation();
 
 },{"animejs":"jokr5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jokr5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
