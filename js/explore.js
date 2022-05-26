@@ -3,12 +3,23 @@ import anime from 'animejs/lib/anime.es.js';
 //initialize init when DOM is completely loaded
 document.addEventListener("DOMContentLoaded", init);
 
+const button = document.querySelector(".gotoBtn");
+let newIndex = 0;
+
+button.addEventListener("click",() => {
+
+if(newIndex == 0){
+  window.location.href = "./lips.html";
+}
+
+});
+
 function init() {
     const slider = document.querySelector(".slider");
     const nextBtn = slider.querySelector(".next");
     const prevBtn = slider.querySelector(".prev");
     const category = slider.querySelectorAll(".category");
-  
+
     let current = 0;
   
     category.forEach((item) => {
@@ -17,6 +28,7 @@ function init() {
         /\S/g,
         "<span class='letter'>$&</span>"
       );
+      
     });
   
     //animations
@@ -46,7 +58,9 @@ function init() {
         easing: "easeInQuint",
         duration: t,
         delay: (el, i) => 10 * (i + 1)
-      })
+        
+      }
+      )
         .add(
           {
             targets: currentImgs[0],
@@ -176,17 +190,19 @@ function init() {
     function next() {
       if (isPlaying) return;
       isPlaying = true;
-      const newIndex = current === category.length - 1 ? 0 : current + 1;
+      newIndex = current === category.length - 1 ? 0 : current + 1;
       updateSlider(newIndex);
     }
   
     function prev() {
       if (isPlaying) return;
       isPlaying = true;
-      const newIndex = current === 0 ? category.length - 1 : current - 1;
+      newIndex = current === 0 ? category.length - 1 : current - 1;
       updateSlider(newIndex);
     }
   
+    
+
     nextBtn.onclick = next;
     prevBtn.onclick = prev;
   }

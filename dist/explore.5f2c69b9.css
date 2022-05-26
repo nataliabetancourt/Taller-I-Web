@@ -5,10 +5,6 @@
 }
 
 a {
-<<<<<<< HEAD
-=======
-  color: #5c302f;
->>>>>>> cb3da56e97f5d0ee247e75018b4fbafa799a855b
   color: #fff3ec;
   text-decoration: none;
 }
@@ -61,13 +57,6 @@ ul {
   height: 25px;
 }
 
-<<<<<<< HEAD
-=======
-.icons {
-  align-items: center;
-}
-
->>>>>>> cb3da56e97f5d0ee247e75018b4fbafa799a855b
 .icons__item {
   width: fit-content;
   height: 25px;
@@ -84,7 +73,7 @@ ul {
 }
 
 .slider {
-  height: 680px;
+  height: 700px;
   width: 100%;
   color: #fff;
   background-color: #340c0c;
@@ -93,7 +82,6 @@ ul {
   transition: background-color 2s;
   display: flex;
   position: relative;
-  top: 60px;
   overflow: hidden;
 }
 

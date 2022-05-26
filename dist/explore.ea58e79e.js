@@ -531,6 +531,11 @@ var _animeEsJs = require("animejs/lib/anime.es.js");
 var _animeEsJsDefault = parcelHelpers.interopDefault(_animeEsJs);
 //initialize init when DOM is completely loaded
 document.addEventListener("DOMContentLoaded", init);
+const button = document.querySelector(".gotoBtn");
+let newIndex = 0;
+button.addEventListener("click", ()=>{
+    if (newIndex == 0) window.location.href = "./lips.html";
+});
 function init() {
     const slider = document.querySelector(".slider");
     const nextBtn = slider.querySelector(".next");
@@ -682,13 +687,13 @@ function init() {
         }, offset);
     }
     let isPlaying = false;
-    function updateSlider(newIndex) {
+    function updateSlider(newIndex1) {
         const currentItem = category[current1];
-        const newItem = category[newIndex];
+        const newItem = category[newIndex1];
         function callback() {
             currentItem.classList.remove("is-active");
             newItem.classList.add("is-active");
-            current1 = newIndex;
+            current1 = newIndex1;
             isPlaying = false;
         }
         animation(currentItem, newItem, callback);
@@ -696,13 +701,13 @@ function init() {
     function next1() {
         if (isPlaying) return;
         isPlaying = true;
-        const newIndex = current1 === category.length - 1 ? 0 : current1 + 1;
+        newIndex = current1 === category.length - 1 ? 0 : current1 + 1;
         updateSlider(newIndex);
     }
     function prev() {
         if (isPlaying) return;
         isPlaying = true;
-        const newIndex = current1 === 0 ? category.length - 1 : current1 - 1;
+        newIndex = current1 === 0 ? category.length - 1 : current1 - 1;
         updateSlider(newIndex);
     }
     nextBtn.onclick = next1;

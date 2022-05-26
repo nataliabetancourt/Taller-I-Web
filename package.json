@@ -19,13 +19,8 @@
   "homepage": "https://github.com/nataliabetancourt/Taller-I-Web#readme",
   "dependencies": {
     "animejs": "^3.2.1",
-<<<<<<< HEAD
-
     "firebase": "^9.8.1"
 
-=======
-    "firebase": "^9.8.1"
->>>>>>> cb3da56e97f5d0ee247e75018b4fbafa799a855b
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.5.0",
