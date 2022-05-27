@@ -541,7 +541,7 @@ function init() {
     const nextBtn = slider.querySelector(".next");
     const prevBtn = slider.querySelector(".prev");
     const category = slider.querySelectorAll(".category");
-    //array para los slides 
+    //variable para los slides 
     let current1 = 0;
     category.forEach((item)=>{
         const textTitle = item.querySelector(".category__content__title");
@@ -556,18 +556,17 @@ function init() {
         const nextText = next.querySelectorAll(".category__content .letter");
         //time between sliders
         const t = 800;
-        //espera entre slides 400milisegundos , lanza slides antes por que tienen -, + indica que espera
+        //wait in between slides
         const offset = "-=400";
-        //espera entre imagenes 400milisegundos
+        //wait in between images
         const imgOffset = 600;
         //synchronise animations
-        const tl = _animeEsJsDefault.default.timeline({
+        _animeEsJsDefault.default.timeline({
             easing: "easeInOutQuint",
             duration: t,
             complete: callback
-        });
-        //keyframes
-        tl.add({
+        })//keyframes
+        .add({
             targets: currentText,
             translateY: [
                 0,
@@ -696,10 +695,8 @@ function init() {
     function updateSlider(newIndex1) {
         const currentItem = category[current1];
         const newItem = category[newIndex1];
-        //hace que el continue ejecutandose el codigo para que los slides corran
+        //keeps executing code 
         function callback() {
-            currentItem.classList.remove("is-active");
-            newItem.classList.add("is-active");
             current1 = newIndex1;
             isPlaying = false;
         }

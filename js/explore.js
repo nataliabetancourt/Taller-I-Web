@@ -20,7 +20,7 @@ function init() {
     const prevBtn = slider.querySelector(".prev");
     const category = slider.querySelectorAll(".category");
 
-    //array para los slides 
+    //variable para los slides 
     let current = 0;
   
     category.forEach((item) => {
@@ -43,20 +43,20 @@ function init() {
   
       //time between sliders
       const t = 800;
-      //espera entre slides 400milisegundos , lanza slides antes por que tienen -, + indica que espera
+      //wait in between slides
       const offset = "-=400";
-      //espera entre imagenes 400milisegundos
+      //wait in between images
       const imgOffset = 600;
   
       //synchronise animations
-      const tl = anime.timeline({
+      anime.timeline({
         easing: "easeInOutQuint",
         duration: t,
         complete: callback
-      });
+      })
 
       //keyframes
-      tl.add({
+      .add({
         targets: currentText,
         translateY: [0, '-.75em'],
         opacity: [1, 0],
@@ -182,10 +182,8 @@ function init() {
       const currentItem = category[current];
       const newItem = category[newIndex];
   
-      //hace que el continue ejecutandose el codigo para que los slides corran
+      //keeps executing code 
       function callback() {
-        currentItem.classList.remove("is-active");
-        newItem.classList.add("is-active");
         current = newIndex;
         isPlaying = false;
       }
@@ -207,8 +205,6 @@ function init() {
       updateSlider(newIndex);
     }
   
-    
-
     nextBtn.onclick = next;
     prevBtn.onclick = prev;
   }
