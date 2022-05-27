@@ -541,6 +541,7 @@ function init() {
     const nextBtn = slider.querySelector(".next");
     const prevBtn = slider.querySelector(".prev");
     const category = slider.querySelectorAll(".category");
+    //array para los slides 
     let current1 = 0;
     category.forEach((item)=>{
         const textTitle = item.querySelector(".category__content__title");
@@ -548,13 +549,16 @@ function init() {
     });
     //animations
     function animation(current, next, callback) {
+        //elements to animate
         const currentImgs = current.querySelectorAll(".category__imgs__grid__img");
         const currentText = current.querySelectorAll(".category__content .letter");
         const nextImgs = next.querySelectorAll(".category__imgs__grid__img");
         const nextText = next.querySelectorAll(".category__content .letter");
         //time between sliders
         const t = 800;
+        //espera entre slides 400milisegundos , lanza slides antes por que tienen -, + indica que espera
         const offset = "-=400";
+        //espera entre imagenes 400milisegundos
         const imgOffset = 600;
         //synchronise animations
         const tl = _animeEsJsDefault.default.timeline({
@@ -562,6 +566,7 @@ function init() {
             duration: t,
             complete: callback
         });
+        //keyframes
         tl.add({
             targets: currentText,
             translateY: [
@@ -574,7 +579,7 @@ function init() {
             ],
             easing: "easeInQuint",
             duration: t,
-            delay: (el, i)=>10 * (i + 1)
+            delay: 10
         }).add({
             targets: currentImgs[0],
             translateY: -600,
@@ -683,13 +688,15 @@ function init() {
             ],
             easing: "easeOutQuint",
             duration: t * 1.5,
-            delay: (el, i)=>10 * (i + 1)
+            delay: 10
         }, offset);
     }
+    //boolean
     let isPlaying = false;
     function updateSlider(newIndex1) {
         const currentItem = category[current1];
         const newItem = category[newIndex1];
+        //hace que el continue ejecutandose el codigo para que los slides corran
         function callback() {
             currentItem.classList.remove("is-active");
             newItem.classList.add("is-active");

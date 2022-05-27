@@ -20,6 +20,7 @@ function init() {
     const prevBtn = slider.querySelector(".prev");
     const category = slider.querySelectorAll(".category");
 
+    //array para los slides 
     let current = 0;
   
     category.forEach((item) => {
@@ -34,6 +35,7 @@ function init() {
     //animations
     function animation(current, next, callback) {
 
+      //elements to animate
       const currentImgs = current.querySelectorAll(".category__imgs__grid__img");
       const currentText = current.querySelectorAll(".category__content .letter");
       const nextImgs = next.querySelectorAll(".category__imgs__grid__img");
@@ -41,7 +43,9 @@ function init() {
   
       //time between sliders
       const t = 800;
+      //espera entre slides 400milisegundos , lanza slides antes por que tienen -, + indica que espera
       const offset = "-=400";
+      //espera entre imagenes 400milisegundos
       const imgOffset = 600;
   
       //synchronise animations
@@ -51,13 +55,14 @@ function init() {
         complete: callback
       });
 
+      //keyframes
       tl.add({
         targets: currentText,
         translateY: [0, '-.75em'],
         opacity: [1, 0],
         easing: "easeInQuint",
         duration: t,
-        delay: (el, i) => 10 * (i + 1)
+        delay: 10,
         
       }
       )
@@ -165,18 +170,19 @@ function init() {
             opacity: [0, 1],
             easing: "easeOutQuint",
             duration: t*1.5,
-            delay: (el, i) => 10 * (i + 1)
+            delay: 10,
           },
           offset
         );
     }
-  
+    //boolean
     let isPlaying = false;
   
     function updateSlider(newIndex) {
       const currentItem = category[current];
       const newItem = category[newIndex];
   
+      //hace que el continue ejecutandose el codigo para que los slides corran
       function callback() {
         currentItem.classList.remove("is-active");
         newItem.classList.add("is-active");
